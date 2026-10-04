@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "codename": "River & Hearth",
+  "codename_slug": "River-and-Hearth",
+  "scope": "main",
+  "target": "github-pages",
+  "preservation_commit": "e6da06846c3c4102163656ddbd799e1fe6df6316",
+  "original_html_sha256": "708817d6ae8951fe0504bc2636ff87d2ca5bd47d164659bb41c8b1dbfae8dc25"
+}

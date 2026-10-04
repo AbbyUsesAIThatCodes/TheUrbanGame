@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "codename": "River & Hearth",
+  "codename_slug": "River-and-Hearth",
+  "scope": "main",
+  "target": "github-pages",
+  "preservation_commit": "e6da06846c3c4102163656ddbd799e1fe6df6316",
+  "original_html_sha256": "708817d6ae8951fe0504bc2636ff87d2ca5bd47d164659bb41c8b1dbfae8dc25",
+  "ordinal": 2,
+  "build_time_utc": "2026-10-04T22:01:06.381485+00:00",
+  "source_revision": "e6da06846c3c4102163656ddbd799e1fe6df6316",
+  "source_dirty": true,
+  "source_fingerprint_sha256": "5c3b918ec879ebf94c0daa307b353b0606ddc69f0c0a6e63d6d9de7667cd4c3e",
+  "build_input_paths": [
+    "originals/Urban-Game.html",
+    "build/release.json",
+    "tools/prepare_pages.py"
+  ],
+  "identifier": "1.0.0_River-and-Hearth_main_build-002_20261004T220106Z_ge6da06846c3c_dirty-5c3b918ec879_github-pages",
+  "adaptation": "Extract two identical PNGs to relative URLs for browser CSS backgrounds; add build identity footer. Gameplay scripts and source narratives unchanged.",
+  "assets": {
+    "assets/buildings.png": {
+      "size_bytes": 2411871,
+      "sha256": "fb0774fc6b25ff4a128ab6dfbf30ece9d7772cfea98c237e0df84366baa44ab8"
+    },
+    "assets/valley.png": {
+      "size_bytes": 3099712,
+      "sha256": "af21300f02d81e2175f08184e06b253870decf3aba4d66b11c07422819b8d9de"
+    }
+  }
+}
