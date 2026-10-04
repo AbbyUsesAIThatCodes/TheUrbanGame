@@ -1,0 +1,30 @@
+{
+  "algorithm": "SHA-256",
+  "source": "Owner-supplied local Urban Game teaching folder; all four files match the previously recovered source checksums.",
+  "files": [
+    {
+      "path": "originals/NCH Copy of Urban Game for World History.pptx",
+      "size_bytes": 6829878,
+      "sha256": "c0615649d459b75807f5dce2934846dba836093a7e6d3027c2a2555f7a1d93bb",
+      "git_blob_sha1": "126f7ff05ea80acb9c30cd7b7dae2772e9a137fe"
+    },
+    {
+      "path": "originals/NCH Copy of Urban Game Rounds 1-10.pptx",
+      "size_bytes": 1353820,
+      "sha256": "970aae5374424144ce9e6cadecdf2f0862364327be1ea0b7e43b459c6637baaf",
+      "git_blob_sha1": "7f0268068b956a62a3dd8884ca0d891a4d0172ee"
+    },
+    {
+      "path": "originals/Urban Game Board.pdf",
+      "size_bytes": 15622,
+      "sha256": "030f4f5c9e5b557b89f36a59aeb3f47c6e23ce8ed83d7ac1932849c212355a2f",
+      "git_blob_sha1": "4c0ac02d34f2c955e921a047bba26c10b0b1dcbe"
+    },
+    {
+      "path": "originals/Urban-Game.html",
+      "size_bytes": 18051610,
+      "sha256": "708817d6ae8951fe0504bc2636ff87d2ca5bd47d164659bb41c8b1dbfae8dc25",
+      "git_blob_sha1": "22e486fbf40e5c6d157cfa50b5054a3f12b44acd"
+    }
+  ]
+}

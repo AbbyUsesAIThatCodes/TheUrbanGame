@@ -1,0 +1,2 @@
+# Preserve the recovered source files without newline normalization.
+originals/** -text
