@@ -1,0 +1,21 @@
+{
+  "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-006_20261004T223540Z_ged367a7a6138_dirty-664562612c38_3d-review",
+  "manifest": "dist/build-manifest.json",
+  "output_directory": ".builds/1.0.0_River-and-Hearth_local-3d-round-1_build-006_20261004T223540Z_ged367a7a6138_dirty-664562612c38_3d-review",
+  "payload_sha256": {
+    "app.js": "ecf282c735a8c3ba58b1b6f26a2bd3c680043d47d1a5065d13d5e1e59b347f57",
+    "build-manifest.json": "3ba56ca8e245e24d1fa5d9358f24fc36c1e39214058ee4c89f0ab02e63fe76fc",
+    "index.html": "b343aa6094a4491afd2a6143966a8f8f0c36af9d89c754f46d5bdb544a6d552c",
+    "models.js": "087c6ac23f6d35e661daf03615830400976272a9abd86ca8d233c058a8c0b0d9",
+    "review-state.js": "85c38ebafef080ca63bd0e80d0d9472f7cd8e31c32399c4d61c206e81acab83b",
+    "styles.css": "305d21d5f42d20369210e9afbb51e890daa76c7e99eac169237ffcce31aa00c4",
+    "assets/buildings.png": "fb0774fc6b25ff4a128ab6dfbf30ece9d7772cfea98c237e0df84366baa44ab8",
+    "assets/valley.png": "af21300f02d81e2175f08184e06b253870decf3aba4d66b11c07422819b8d9de",
+    "recovered/rules.js": "3ead711e66c2e84af5bfffa65365d8d850fc7070204da95d9aa0ef63576da0d9",
+    "recovered/sources.json": "7c48378514a5e3003c746c2ed77c9a185bd9bdb7c2698772180351ede3e312f0",
+    "vendor/THREE-LICENSE.txt": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+    "vendor/three.core.js": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+    "vendor/three.module.js": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+    "vendor/addons/controls/OrbitControls.js": "3d79d07ecb686b4e5d93232eedab255331c1beef711e13164eaa1f68655a5f2b"
+  }
+}

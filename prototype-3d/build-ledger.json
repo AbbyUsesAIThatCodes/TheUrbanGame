@@ -1,0 +1,36 @@
+{
+  "scope": "local-3d-round-1",
+  "next_ordinal": 7,
+  "attempts": [
+    {
+      "ordinal": 1,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-001_20261004T222721Z_ged367a7a6138_dirty-763c83f13068_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 2,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-002_20261004T222741Z_ged367a7a6138_dirty-319250916de8_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 3,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-003_20261004T223105Z_ged367a7a6138_dirty-74c037423de2_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 4,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-004_20261004T223146Z_ged367a7a6138_dirty-4c970e426eca_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 5,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-005_20261004T223428Z_ged367a7a6138_dirty-cec89fda9c8a_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 6,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-006_20261004T223540Z_ged367a7a6138_dirty-664562612c38_3d-review",
+      "status": "succeeded"
+    }
+  ]
+}
