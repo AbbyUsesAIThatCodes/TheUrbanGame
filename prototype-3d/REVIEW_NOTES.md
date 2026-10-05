@@ -15,3 +15,7 @@ Accepted screen-relative panning, orbit controls, cancellation recovery, zoom, o
 Version 3 review saves use a separate browser key and import earlier version 1/2 reviews without overwriting either older key or advancing their village automatically. An intermediate review's recorded endpoint allows completed earlier saves to continue normally. The accepted 2D save is never read or written.
 
 Builds 006, 008 and 011, their source branches, immutable artifacts, and original QA evidence remain preserved. Source and validation checkpoints are in [Full Game Review](../documentation/FULL_GAME_REVIEW.md). The accepted public Pages commit remains `5059061dea9c106de5f70d25a6e238629ac76217`; the private Site is unchanged.
+
+## Artwork-Inspired Model Refinements
+
+After the complete Build015 walkthrough passed, the actual permanent atlas was inspected. The cottage, nice house and factory were then refined with stone/brick facades, detailed roofs, framed and arched windows, the manor’s formal entrance, and separate water-powered/steam-era factory forms. Rear and side facades are modeled for orbit viewing. All geometry stays within its original footprint; no game-state fields, rules, controls or historical wording changed. Shared geometry and vertex colors batch the model details without external textures. Focused and rotated headless screenshots were visually inspected against the original artwork.

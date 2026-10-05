@@ -37,6 +37,6 @@ All20 rounds, final source conclusion, both original question sets, automatic an
 
 All43 unit/source/model/save tests passed. Build verification passed49 payloads; four originals,53 slide texts,33 restored source images, original artwork and the rule engine retain their source identities. Builds006/008/011 and accepted camera/pointer source blocks are unchanged.
 
-Build014 exposed a theater column extending0.0085 grid units past its footprint; Build015 fixes it. A cross-context test comparison was normalized correctly. The earlier browser run also recorded an image request interrupted while navigating; the complete rerun waits for image decoding, verifies all asset hashes, and records navigation cancellations separately. It passed with 0 cancelled requests and no script or asset failures. Build014 remains identifiable but is not the validated review.
+Build014 exposed a theater column extending0.0085 grid units past its footprint; Build015 fixes it. A cross-context test comparison was normalized correctly. The earlier fast-navigation browser run also recorded one unfinished image request; the complete rerun waits for image decoding, verifies all asset hashes, and records navigation cancellations separately. It passed with 0 cancelled requests and no script or asset failures. Build014 remains identifiable but is not the validated review.
 
 The complete-game artifact and its QA evidence were preserved before any artwork-inspired model refinements.

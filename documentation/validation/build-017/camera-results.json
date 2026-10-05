@@ -1,0 +1,369 @@
+{
+  "url": "http://127.0.0.1:8770/",
+  "buildIdentity": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-017_20261005T021504Z_g9f236629e674_dirty-fe4b6b859f57_3d-review",
+  "checks": [
+    "27 pan measurements match pointer pixels across three orientations, three zooms, and both axes, with no release drift",
+    "Middle-button horizontal orbit works while building, preserves tilt and state, suppresses browser defaults, and leaves wheel zoom working",
+    "Overhead remains north-up and rotation-locked with middle-button input",
+    "12 interrupted pan/orbit cases recover: cancel, lost capture, focus-loss signal, Escape, outside release, and missing buttons; placement and keyboard undo still work",
+    "Low-angle extreme panning keeps a grounded orbit pivot and camera above the board, respects navigation bounds, and Frame Village restores the center",
+    "Split header shows the compact label, year, round, and actions without a footer or overlaps at 1600, 1000, 720, and 390 pixels",
+    "A build 006 review save migrates without losing progress and can continue into Round 2",
+    "No JavaScript errors during camera or header checks"
+  ],
+  "panMeasurements": [
+    {
+      "yawDrag": 0,
+      "tiltDrag": 0,
+      "zoom": 1,
+      "requested": [
+        60,
+        0
+      ],
+      "actual": [
+        60,
+        0
+      ]
+    },
+    {
+      "yawDrag": 0,
+      "tiltDrag": 0,
+      "zoom": 1,
+      "requested": [
+        0,
+        60
+      ],
+      "actual": [
+        -1.1368683772161603e-13,
+        59.999999999999886
+      ]
+    },
+    {
+      "yawDrag": 0,
+      "tiltDrag": 0,
+      "zoom": 1,
+      "requested": [
+        -45,
+        -45
+      ],
+      "actual": [
+        -45,
+        -44.999999999999886
+      ]
+    },
+    {
+      "yawDrag": 0,
+      "tiltDrag": 0,
+      "zoom": 1.6900000000000002,
+      "requested": [
+        60,
+        0
+      ],
+      "actual": [
+        60,
+        1.1368683772161603e-13
+      ]
+    },
+    {
+      "yawDrag": 0,
+      "tiltDrag": 0,
+      "zoom": 1.6900000000000002,
+      "requested": [
+        0,
+        60
+      ],
+      "actual": [
+        -3.410605131648481e-13,
+        60.00000000000051
+      ]
+    },
+    {
+      "yawDrag": 0,
+      "tiltDrag": 0,
+      "zoom": 1.6900000000000002,
+      "requested": [
+        -45,
+        -45
+      ],
+      "actual": [
+        -44.999999999999886,
+        -45.00000000000023
+      ]
+    },
+    {
+      "yawDrag": 0,
+      "tiltDrag": 0,
+      "zoom": 3.7129300000000014,
+      "requested": [
+        60,
+        0
+      ],
+      "actual": [
+        59.999999999999886,
+        0
+      ]
+    },
+    {
+      "yawDrag": 0,
+      "tiltDrag": 0,
+      "zoom": 3.7129300000000014,
+      "requested": [
+        0,
+        60
+      ],
+      "actual": [
+        -1.1368683772161603e-13,
+        60.000000000000114
+      ]
+    },
+    {
+      "yawDrag": 0,
+      "tiltDrag": 0,
+      "zoom": 3.7129300000000014,
+      "requested": [
+        -45,
+        -45
+      ],
+      "actual": [
+        -44.999999999999886,
+        -45.00000000000034
+      ]
+    },
+    {
+      "yawDrag": 190,
+      "tiltDrag": 100,
+      "zoom": 1,
+      "requested": [
+        60,
+        0
+      ],
+      "actual": [
+        60.000000000000114,
+        -1.1368683772161603e-13
+      ]
+    },
+    {
+      "yawDrag": 190,
+      "tiltDrag": 100,
+      "zoom": 1,
+      "requested": [
+        0,
+        60
+      ],
+      "actual": [
+        0,
+        60.00000000000006
+      ]
+    },
+    {
+      "yawDrag": 190,
+      "tiltDrag": 100,
+      "zoom": 1,
+      "requested": [
+        -45,
+        -45
+      ],
+      "actual": [
+        -45.000000000000114,
+        -45
+      ]
+    },
+    {
+      "yawDrag": 190,
+      "tiltDrag": 100,
+      "zoom": 1.6900000000000002,
+      "requested": [
+        60,
+        0
+      ],
+      "actual": [
+        59.999999999999886,
+        1.1368683772161603e-13
+      ]
+    },
+    {
+      "yawDrag": 190,
+      "tiltDrag": 100,
+      "zoom": 1.6900000000000002,
+      "requested": [
+        0,
+        60
+      ],
+      "actual": [
+        0,
+        60
+      ]
+    },
+    {
+      "yawDrag": 190,
+      "tiltDrag": 100,
+      "zoom": 1.6900000000000002,
+      "requested": [
+        -45,
+        -45
+      ],
+      "actual": [
+        -44.999999999999886,
+        -45.000000000000114
+      ]
+    },
+    {
+      "yawDrag": 190,
+      "tiltDrag": 100,
+      "zoom": 3.7129300000000014,
+      "requested": [
+        60,
+        0
+      ],
+      "actual": [
+        60,
+        0
+      ]
+    },
+    {
+      "yawDrag": 190,
+      "tiltDrag": 100,
+      "zoom": 3.7129300000000014,
+      "requested": [
+        0,
+        60
+      ],
+      "actual": [
+        0,
+        60
+      ]
+    },
+    {
+      "yawDrag": 190,
+      "tiltDrag": 100,
+      "zoom": 3.7129300000000014,
+      "requested": [
+        -45,
+        -45
+      ],
+      "actual": [
+        -45,
+        -44.999999999999886
+      ]
+    },
+    {
+      "yawDrag": -280,
+      "tiltDrag": -100,
+      "zoom": 1,
+      "requested": [
+        60,
+        0
+      ],
+      "actual": [
+        59.999999999999886,
+        0
+      ]
+    },
+    {
+      "yawDrag": -280,
+      "tiltDrag": -100,
+      "zoom": 1,
+      "requested": [
+        0,
+        60
+      ],
+      "actual": [
+        9.094947017729282e-13,
+        59.999999999999716
+      ]
+    },
+    {
+      "yawDrag": -280,
+      "tiltDrag": -100,
+      "zoom": 1,
+      "requested": [
+        -45,
+        -45
+      ],
+      "actual": [
+        -45.00000000000068,
+        -44.999999999999886
+      ]
+    },
+    {
+      "yawDrag": -280,
+      "tiltDrag": -100,
+      "zoom": 1.6900000000000002,
+      "requested": [
+        60,
+        0
+      ],
+      "actual": [
+        60.000000000000114,
+        0
+      ]
+    },
+    {
+      "yawDrag": -280,
+      "tiltDrag": -100,
+      "zoom": 1.6900000000000002,
+      "requested": [
+        0,
+        60
+      ],
+      "actual": [
+        -2.2737367544323206e-13,
+        60.00000000000006
+      ]
+    },
+    {
+      "yawDrag": -280,
+      "tiltDrag": -100,
+      "zoom": 1.6900000000000002,
+      "requested": [
+        -45,
+        -45
+      ],
+      "actual": [
+        -44.999999999999886,
+        -45.00000000000023
+      ]
+    },
+    {
+      "yawDrag": -280,
+      "tiltDrag": -100,
+      "zoom": 3.7129300000000014,
+      "requested": [
+        60,
+        0
+      ],
+      "actual": [
+        60,
+        0
+      ]
+    },
+    {
+      "yawDrag": -280,
+      "tiltDrag": -100,
+      "zoom": 3.7129300000000014,
+      "requested": [
+        0,
+        60
+      ],
+      "actual": [
+        3.524291969370097e-12,
+        59.99999999999926
+      ]
+    },
+    {
+      "yawDrag": -280,
+      "tiltDrag": -100,
+      "zoom": 3.7129300000000014,
+      "requested": [
+        -45,
+        -45
+      ],
+      "actual": [
+        -45.000000000000114,
+        -45
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "passed"
+}

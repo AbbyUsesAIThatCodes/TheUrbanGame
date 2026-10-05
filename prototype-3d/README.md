@@ -1,6 +1,6 @@
 # The Urban Game — Local 3D Review
 
-The owner-authorized **1.1.0 A Town Takes Shape** review covers the original setup, all 20 rounds, the urbanization conclusion, and both original reflection question sets. Public Pages remains the accepted 1.0.0 release; this branch is local and unpublished.
+The owner-authorized **1.1.0 A Town Takes Shape** review covers the original setup, all 20 rounds, the urbanization conclusion, and both original reflection question sets. Public Pages remains the accepted 1.0.0 release; this is a review branch; the prototype is not deployed.
 
 ## Open The Review
 
@@ -24,7 +24,7 @@ Build by selecting a tile and clicking its upper-left grid square. Drag for a co
 
 The accepted controls and layout are preserved: screen-relative Pan & Inspect, middle-button orbit, right-drag rotation, Rotate mode, wheel zoom, north-up Overhead, Frame Village, Focus, and independently collapsible panels. The compact title banner reads **version codename BuildNNN**. Guide → About This Build retains the canonical ID, fixed UTC timestamp and source revision.
 
-The original 2D illustrations are permanent chooser and inspector artwork. The 3D models are separate geometric representations with the same logical footprints. Navigation and model appearance do not change the village data.
+The original 2D illustrations are permanent chooser and inspector artwork. The cottage, nice house and factory now use detailed geometry based on the inspected atlas: limestone courses, terracotta/slate tiles, framed windows, manor balcony and stairs, and the brick mill’s arched facades, roof lantern and era-appropriate wheel or chimney. Shared geometry and vertex colors keep repeated buildings economical to render. The 3D models are separate geometric representations with the same logical footprints. Navigation and model appearance do not change the village data.
 
 ## Earlier Saves And Preserved Builds
 
@@ -32,7 +32,7 @@ The version 3 review wrapper imports version 1 Round 1 and version 2 Round 5 rev
 
 The current browser key is `nch-urban-game-3d-full-review-v3`. If absent, the app copies a valid save first from `nch-urban-game-3d-round5-review-v2`, then from `nch-urban-game-3d-round1-review-v1`. Both earlier values remain untouched. The accepted 2D key `nch-urban-game-v1` is never read or written.
 
-Builds 006, 008 and 011 remain in immutable distributions, local baseline branches, and sibling QA folders. Work continues on `review/3d-full-game`. No push, merge or deployment is authorized for this review.
+Builds 006, 008, 011 and the complete-game Build015 remain in immutable distributions, local baseline branches, and sibling QA folders. Work continues on `review/3d-full-game`. The owner authorized review-branch uploads for preservation. Merging into main and deploying the prototype remain outside this task.
 
 ## Validation
 

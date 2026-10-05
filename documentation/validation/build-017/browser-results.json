@@ -1,0 +1,66 @@
+{
+  "url": "http://127.0.0.1:8770/",
+  "buildIdentity": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-017_20261005T021504Z_g9f236629e674_dirty-fe4b6b859f57_3d-review",
+  "checks": [
+    {
+      "name": "Prepared village, original rule engine, compact label, and full embedded identity load"
+    },
+    {
+      "name": "Pan and rotation change the view without modifying the village"
+    },
+    {
+      "name": "North-up overhead view, frame reset, and zoom controls"
+    },
+    {
+      "name": "Close inspection, enlarged original artwork, and collapsible floating panels"
+    },
+    {
+      "name": "Both original Round 1 narratives are shown verbatim"
+    },
+    {
+      "name": "Protected commons, manor placement, undo, and redo use original requirements"
+    },
+    {
+      "name": "Complete Round 1 through normal UI with no override and begin Round 2"
+    },
+    {
+      "name": "Round 2: exact narratives, year, normal additions, constraints, boundary save/reopen, and completion"
+    },
+    {
+      "name": "Round 3: exact narratives, year, normal additions, constraints, boundary save/reopen, and completion"
+    },
+    {
+      "name": "Round 4: exact narratives, year, normal additions, constraints, boundary save/reopen, and completion"
+    },
+    {
+      "name": "Round 5: exact narratives, year, normal additions, constraints, boundary save/reopen, and completion"
+    },
+    {
+      "name": "Round5 continues normally, saves reopen in a fresh context, and unsupported-range imports preserve the village"
+    },
+    {
+      "name": "Repeated house placement recovers from outside release, pointer cancel, lost capture, and focus-loss signal"
+    },
+    {
+      "name": "Escape, tool switching, cemetery placement, repeated houses, and context-menu cancellation leave UI responsive"
+    },
+    {
+      "name": "Blank setup can be built completely through the 3D UI and advances normally"
+    },
+    {
+      "name": "Accepted 2D save key is never changed"
+    },
+    {
+      "name": "Build 006 and 008 browser saves migrate automatically, continue to Round 2, and preserve both earlier save keys"
+    },
+    {
+      "name": "Narrow viewport defaults to a clear board with collapsed panels"
+    },
+    {
+      "name": "No JavaScript errors or failed network requests"
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "status": "passed"
+}
