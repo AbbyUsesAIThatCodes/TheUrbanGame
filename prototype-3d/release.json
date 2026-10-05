@@ -3,6 +3,6 @@
   "codename": "A Town Takes Shape",
   "codename_slug": "A-Town-Takes-Shape",
   "release_status": "local-prototype",
-  "last_round": 5,
-  "compatibility": "Imports earlier version-1 setup and Round 1 review saves into a version-2 wrapper and separate storage key, preserving all original game data."
+  "last_round": 10,
+  "compatibility": "Version-3 review saves import the earlier Round 1 and Round 5 wrappers without auto-advancing or changing their core state. Earlier storage keys remain untouched."
 }

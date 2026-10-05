@@ -1,0 +1,137 @@
+{
+  "source": "originals/Urban-Game.html",
+  "images": {
+    "assets/source/full-1-0.png": {
+      "bytes": 363472,
+      "sha256": "2253fcd0679efe9b10c95a994ca9f6ccc96b8fa9ce0b5c3368757934961f008a"
+    },
+    "assets/source/full-1-1.png": {
+      "bytes": 564075,
+      "sha256": "e30528818f6a4cec898d99cd86a1fa7f8cbe4accec3d9cc10e56a6697ff82f2c"
+    },
+    "assets/source/full-16-0.png": {
+      "bytes": 679707,
+      "sha256": "b9370a7f1e7c45172fb96151e95e699225d3982d18b5d53ec0a4308aeb9d6577"
+    },
+    "assets/source/full-16-1.png": {
+      "bytes": 701708,
+      "sha256": "39e0432ae537fbb6fc916a409b4fcbcd91bddca62b5cb6b75893fcfa54f6e8d5"
+    },
+    "assets/source/full-16-2.png": {
+      "bytes": 90072,
+      "sha256": "67cd6e85bc1deb5813c85ff1a850676242ed5fb9d96a383c293600159d9b695f"
+    },
+    "assets/source/full-16-3.png": {
+      "bytes": 118502,
+      "sha256": "048909ed07ee7a9e4369a8de3744472edb8d0747311bc6fa3b63ba0a26ccc040"
+    },
+    "assets/source/full-16-4.png": {
+      "bytes": 705486,
+      "sha256": "c59d6485169ff64a20d8487c865436ce8e9dc4fe13a8879627be0a5309c7689b"
+    },
+    "assets/source/full-23-0.jpg": {
+      "bytes": 91734,
+      "sha256": "77434fccb23676efd68e5a523abaeeb63c88742f1f21f62afaef309bb9b9f071"
+    },
+    "assets/source/full-23-1.jpg": {
+      "bytes": 7297,
+      "sha256": "71e3022b737f40318624b7ea410f66fb4cfdd9689df3f7a0794d5b476bc494a1"
+    },
+    "assets/source/full-23-2.jpg": {
+      "bytes": 10787,
+      "sha256": "4f18d5e186881a356fc4dd9e5709ff6dd1ca93f38562f8f24134a0dc02ae34ca"
+    },
+    "assets/source/full-23-3.jpg": {
+      "bytes": 7006,
+      "sha256": "1292dc4eb06272c7bb09d65ffc8e2d8bfe1812546ce84ea0bb7ec983a0338915"
+    },
+    "assets/source/full-23-4.jpg": {
+      "bytes": 37538,
+      "sha256": "a4b13d301c534806ad2a8427938581b94a6d456181e875df3559b7535318e277"
+    },
+    "assets/source/full-23-5.jpg": {
+      "bytes": 7921,
+      "sha256": "30e1c9cadebd4212927897f56315e1d159aa388492d36006030e85fe000e501d"
+    },
+    "assets/source/full-26-0.jpg": {
+      "bytes": 64080,
+      "sha256": "ade073c7123101d751fd2ee21d9e58e979318bc4e92677e1c8a17ad42e56bd67"
+    },
+    "assets/source/full-26-1.jpg": {
+      "bytes": 8549,
+      "sha256": "469912d366f2469c82a4a9675dc289400e4509b0804cb5a93a955e4bf073c8e9"
+    },
+    "assets/source/full-26-2.jpg": {
+      "bytes": 8980,
+      "sha256": "57d06d485eb8e972d9dc187a69dce6cc2f96935438d27a77c669e982c5db13ea"
+    },
+    "assets/source/full-26-3.jpg": {
+      "bytes": 8778,
+      "sha256": "784fa11752faeb2a1a78c1a170bac325414a299eb5b350cbc01f24b53b40f356"
+    },
+    "assets/source/full-26-4.jpg": {
+      "bytes": 15791,
+      "sha256": "5afd95dd988f9096068299decf87ae2116df1141fe4e891020a2ebb523101b93"
+    },
+    "assets/source/full-26-5.png": {
+      "bytes": 2169734,
+      "sha256": "23634ae68306b76973384adceaaf120e0869bc960487c78cc1bc28e07cbdf88f"
+    },
+    "assets/source/full-28-0.jpg": {
+      "bytes": 7009,
+      "sha256": "b3f411fa7529b1a518c71d9fe99fff2b2a8d9b6048ab70e7b38886ee7a1f3ebe"
+    },
+    "assets/source/full-28-1.jpg": {
+      "bytes": 9480,
+      "sha256": "183425be5c73c8a5db46f86817f48146a67e8f84132e7dcb9a96a23e00aa7aa6"
+    },
+    "assets/source/full-28-2.jpg": {
+      "bytes": 6470,
+      "sha256": "defcde966bee89ab0e9aeef9d6a288dbcf13ca26b634a2442eaf37c4ca3d4d0a"
+    },
+    "assets/source/full-28-3.jpg": {
+      "bytes": 6562,
+      "sha256": "09d4967b5f7319b560bc2a9d737a0092cbe9001b17fa8cb576ac3ebb396a75d6"
+    },
+    "assets/source/full-28-4.jpg": {
+      "bytes": 11635,
+      "sha256": "609b06db1d1f766e506dda13d8b3f1780702d23fee4f18724306e45815594774"
+    },
+    "assets/source/full-28-5.jpg": {
+      "bytes": 11717,
+      "sha256": "7a85da1c0343b072dcff23a73906959e21bd312b802820323424b5227c431825"
+    },
+    "assets/source/full-32-0.jpg": {
+      "bytes": 56933,
+      "sha256": "fd6e46cf5df01c81ceb83a923493f7b651e165b6a43f39bbb6c788ed285073df"
+    },
+    "assets/source/full-32-1.jpg": {
+      "bytes": 7524,
+      "sha256": "8851d2f2f722045a34293aa116fa03a8e98fe17def9fa4e62f9f0cae69e56cc7"
+    },
+    "assets/source/full-32-2.jpg": {
+      "bytes": 7117,
+      "sha256": "0069e6f8b2f9c532ab35fa08b39627550fd4d1b6e9b0b048299762d7e556997d"
+    },
+    "assets/source/full-34-2.png": {
+      "bytes": 150387,
+      "sha256": "34089ccabf2e8f151b99cddbd9b1b8ce708f143484dc8de8f161d5e342bca3ca"
+    },
+    "assets/source/full-35-0.png": {
+      "bytes": 363472,
+      "sha256": "2253fcd0679efe9b10c95a994ca9f6ccc96b8fa9ce0b5c3368757934961f008a"
+    },
+    "assets/source/full-35-1.png": {
+      "bytes": 564099,
+      "sha256": "bc1eb09592f04949451cf6912754ac9fb08a0a898d2cd04d01c2eb153677a190"
+    },
+    "assets/source/short-1-0.png": {
+      "bytes": 363472,
+      "sha256": "2253fcd0679efe9b10c95a994ca9f6ccc96b8fa9ce0b5c3368757934961f008a"
+    },
+    "assets/source/short-1-1.png": {
+      "bytes": 564075,
+      "sha256": "e30528818f6a4cec898d99cd86a1fa7f8cbe4accec3d9cc10e56a6697ff82f2c"
+    }
+  }
+}

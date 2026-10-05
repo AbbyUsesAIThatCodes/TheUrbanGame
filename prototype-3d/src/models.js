@@ -34,6 +34,12 @@ export function buildingModel(type){
    windows(g,[-.43,-.14,.14,.43],.4,.704);windows(g,[-.43,-.14,.14,.43],.8,.704);door(g,0,.22,.72,.2,.36);
    const wheel=mesh(g,new T.TorusGeometry(.3,.05,6,12),'#74573b',-.84,.45,0);wheel.rotation.y=Math.PI/2;
    box(g,.06,.64,.055,'#9a7950',-.84,.45,0);box(g,.06,.055,.64,'#9a7950',-.84,.45,0);
+ }else if(type==='tenement'){
+   box(g,1.72,1.72,1.55,'#a2866f');roof(g,1.88,1.72,.35,1.72,'#645e54');for(const y of [.4,.85,1.3])windows(g,[-.62,-.3,0,.3,.62],y,.787);door(g,0,.18,.797,.18,.36);for(const x of [-.55,.55])box(g,.15,.4,.15,'#796953',x,1.96,-.3);
+ }else if(type==='school'){
+   box(g,.8,.65,.76,'#d4bf91');roof(g,.92,.89,.32,.65,'#805946');box(g,.16,.3,.18,'#cdb682',0,1.05,0);roof(g,.24,.25,.15,1.2,'#805946');door(g,0,.2,.395);windows(g,[-.26,.26],.4,.395);
+ }else if(type==='jail'){
+   box(g,.84,.87,.8,'#8d9183');roof(g,.94,.9,.23,.87,'#606a60');door(g,0,.23,.415,.21,.46);for(const x of [-.28,.28]){box(g,.16,.22,.025,'#37483f',x,.55,.416);for(const dx of [-.045,.045])box(g,.015,.22,.03,'#b2b5a5',x+dx,.55,.433);}
  }else if(type==='trees'){tree(g,0,0,.85);}
  else {box(g,.8,.8,.8,'#baab86');roof(g,.9,.9,.32,.8,'#738072');}
  return g;
