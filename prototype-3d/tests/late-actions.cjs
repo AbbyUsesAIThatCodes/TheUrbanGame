@@ -2,7 +2,7 @@ const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:
 const {simulate,R}=require('./full-simulation.cjs'),root=path.resolve(__dirname,'..'),out=path.join(root,'test-output');
 const report={identifier:JSON.parse(fs.readFileSync(path.join(root,'current-build.json'))).identifier,checks:[],errors:[]},pass=t=>{report.checks.push(t);console.log('PASS '+t);};
 (async()=>{const {rounds}=await simulate(),browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});try{
- const page=await browser.newPage({viewport:{width:1600,height:1000},acceptDownloads:true});page.on('pageerror',e=>report.errors.push(e.message));await page.goto('http://127.0.0.1:8770/',{waitUntil:'networkidle'});await page.waitForFunction(()=>!!globalThis.__URBAN_REVIEW__);
+ const page=await browser.newPage({viewport:{width:1600,height:1000},acceptDownloads:true});page.on('pageerror',e=>report.errors.push(e.message));await page.goto((process.env.URBAN_REVIEW_URL||'http://127.0.0.1:8770/'),{waitUntil:'networkidle'});await page.waitForFunction(()=>!!globalThis.__URBAN_REVIEW__);
  const read=()=>page.evaluate(()=>__URBAN_REVIEW__.read()),point=(x,y)=>page.evaluate(([x,y])=>__URBAN_REVIEW__.cellToScreen(x,y),[x,y]);
  const panel=async(name,open)=>{if((await page.locator('#'+name+'Toggle').getAttribute('aria-expanded')==='true')!==open)await page.locator('#'+name+'Toggle').click();};
  const select=async type=>{await panel('tools',true);await page.locator('[data-tool='+type+']').click();await panel('tools',false);};
