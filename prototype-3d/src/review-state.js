@@ -1,5 +1,5 @@
 const R = globalThis.UrbanRules;
-export const LAST_ROUND = 15;
+export const LAST_ROUND = 20;
 export const STORAGE = 'nch-urban-game-3d-full-review-v3';
 export const PREVIOUS_STORAGE = 'nch-urban-game-3d-round5-review-v2';
 export const LEGACY_STORAGE = 'nch-urban-game-3d-round1-review-v1';

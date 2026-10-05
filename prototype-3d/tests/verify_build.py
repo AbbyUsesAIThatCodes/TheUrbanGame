@@ -11,6 +11,8 @@ release=json.loads((ROOT/'release.json').read_text())
 assert all(manifest[k]==release[k] for k in ['version','codename','codename_slug','release_status'])
 assert json.loads((ROOT/'package.json').read_text())['version']==release['version']
 assert manifest['playable_scope']==['setup',*[f'round-{n}' for n in range(1,release['last_round']+1)]]
+assert int(re.search(r'LAST_ROUND = (\d+)',(ROOT/'src/review-state.js').read_text()).group(1))==release['last_round']
+assert f'Rounds 1–{release["last_round"]}' in index
 assert manifest['display_label']==f"{manifest['version']} {manifest['codename']} Build{manifest['ordinal']:03d}"
 assert f'<p id="buildIdentity">{html.escape(manifest["display_label"])}</p>' in index
 assert '<footer' not in index

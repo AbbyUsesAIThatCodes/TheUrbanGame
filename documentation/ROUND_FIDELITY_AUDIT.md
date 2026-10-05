@@ -2,7 +2,7 @@
 
 ## Scope And Authority
 
-This audit uses the exact two PowerPoints, board PDF, and recovered HTML in `originals/`. The full World History deck governs setup and Rounds 1–20; the second deck provides alternate original wording through Round 10. The board governs footprints and provides one version of the reflection questions. The approved 1.1.0 A Town Takes Shape local milestone covers setup and Rounds 1–5. The focused extension audit is in [Rounds 2–5 Review](ROUNDS_2_TO_5_REVIEW.md). No historical wording is corrected and no economic simulation, scoring, or extra events are introduced.
+This audit uses the exact two PowerPoints, board PDF, and recovered HTML in `originals/`. The full World History deck governs setup and Rounds 1–20; the second deck provides alternate original wording through Round 10. The board governs footprints and provides one version of the reflection questions. The owner subsequently authorized the 1.1.0 A Town Takes Shape local review through all 20 rounds and original closing reflections. Incremental evidence is in [Full Game Review](FULL_GAME_REVIEW.md). The earlier focused extension audit remains in [Rounds 2–5 Review](ROUNDS_2_TO_5_REVIEW.md). No historical wording is corrected and no economic simulation, scoring, or extra events are introduced.
 
 All **53 slide texts** in the recovered HTML were compared with the original PowerPoint DrawingML text. All match when whitespace is ignored. The extracted rules script is byte-identical to the original HTML script, SHA-256 `3ead711e66c2e84af5bfffa65365d8d850fc7070204da95d9aa0ef63576da0d9`. Machine-readable evidence is in `prototype-3d/source-provenance.json`. This is fidelity to the supplied classroom source, not independent verification of its historical claims.
 
@@ -47,19 +47,19 @@ The inherited rule definitions match these numeric additions and the five-house 
 | A2 | River width is stated, but winding-river measurement is not. | Existing rules limit occupied cells in each relevant cross-section to three. This can reject some winding drawings whose local width is small. No silent relaxation in this milestone. |
 | A3 | “Nearby” canal and convenient churches have no numeric distance. | Existing game uses a student acknowledgement for the qualitative clause. A canal must be connected, one cell wide, and edge-touch a mine. No added distance or minimum length. |
 | A4 | Setup never explicitly adds a bridge, but later slides reference an old bridge. | Existing roads crossing a river create wooden bridge cells automatically. Round 12 replaces one connected crossing. This reconciliation needs teacher review, not a rewritten setup slide. |
-| A5 | “Within five squares” does not specify diagonal measurement. | Existing rules use shortest orthogonal cell distance, at most five. Review before the 3D milestone reaches Round 7. |
-| A6 | “One continuous track” does not settle branching or entering building footprints. | Existing rules permit a connected branching network and count edge contact. Review before Round 14. |
-| A7 | Water-power restrictions are not repeated in Round 10. | Existing rules continue river-bank placement until steam appears in Round 11. Review before Round 10. |
-| A8 | Smoke at the board edge may extend off the paper. | Existing display shifts its 4 × 4 smoke region inward. No Round 11 implementation is included in this prototype. |
+| A5 | “Within five squares” does not specify diagonal measurement. | Existing rules use shortest orthogonal cell distance, at most five. Retained unchanged; tested in the full review. |
+| A6 | “One continuous track” does not settle branching or entering building footprints. | Existing rules permit a connected branching network and count edge contact. Retained unchanged; tested through a connected factory/mine network. |
+| A7 | Water-power restrictions are not repeated in Round 10. | Existing rules continue river-bank placement until steam appears in Round 11. Retained unchanged; tested before steam. |
+| A8 | Smoke at the board edge may extend off the paper. | Existing display shifts its 4 × 4 smoke region inward. The 3D shading reproduces those exact bounds from Round 11 onward. |
 | A9 | Paper erasure/movement is not exhaustively specified. | Existing rules allow moving buildings and erasing current-round additions, with the special five-house demolition in Round 9. Retained; no new simulation consequences. |
 | A10 | Historic dates and broad causal claims include known issues. | Original words remain visible and unchanged. Historical corrections require separate review and must never silently change a game's actions. |
 
 ## Reflection Wording
 
-The board asks about the impacts of **industrialization** on the village and its **citizens** over time. The full deck's final slide asks about **urbanization** and its **people**. Both then ask what influenced or caused the changes and what issues remain at the end. Keep these two source wordings selectable in the eventual full game; do not collapse them into a newly authored question. Final reflections are outside this five-round prototype's completion milestone.
+The board asks about the impacts of **industrialization** on the village and its **citizens** over time. The full deck's final slide asks about **urbanization** and its **people**. Both then ask what influenced or caused the changes and what issues remain at the end. Both exact source wordings are selectable after Round 20. Answers persist in the original core fields and export as text. The full deck conclusion and original reflection images are also retained.
 
 ## Original Round 1 Milestone
 
-The following describes the preserved, accepted builds 006 and 008. The current approved milestone extends normal progression through Round 5, as specified in the focused extension audit.
+The following describes the preserved, accepted builds 006 and 008. The current approved review extends normal progression through Round 20; the description below records only the earlier preserved milestone.
 
 Setup must be valid under the original rules before Round 1 begins. Round 1 must block completion until the player places exactly one 2 × 2 nice house on valid land, draws a continuous one-square canal touching the mine, and acknowledges the qualitative river proximity requirement. Completing it ends the local review milestone; it must not expose or implement Rounds 2–20. The prepared review village is a clearly labelled valid setup fixture, not extra source content. Original artwork must be available at a useful viewing size independently of the 3D placeholders.

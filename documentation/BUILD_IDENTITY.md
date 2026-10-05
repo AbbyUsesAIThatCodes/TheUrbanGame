@@ -33,7 +33,7 @@ Two sequential real builds were checked for different ordinals and IDs. Reusing 
 
 ## Separate Local 3D Review
 
-The accepted deployed 1.0.0 River & Hearth build above remains unchanged. The owner-approved next local milestone is **1.1.0 A Town Takes Shape**, status `local-prototype`, target `3d-review`, playable setup through Round 5. It is not a published release. The authoritative release record is `prototype-3d/release.json`; package metadata mirrors its version.
+The accepted deployed 1.0.0 River & Hearth build above remains unchanged. The owner-approved next local milestone is **1.1.0 A Town Takes Shape**, status `local-prototype`, target `3d-review`, playable setup through Round 20 with original closing reflections. It is not a published release. The authoritative release record is `prototype-3d/release.json`; package metadata mirrors its version.
 
 The existing durable ledger continues without resetting ordinals. From the 1.1.0 milestone onward, its stable scope is `local-3d-review`; earlier `local-3d-round-1` artifacts and their identifiers remain unchanged. No PR number is invented. The latest identity is authoritative in `prototype-3d/current-build.json`; a later local check-in may record the same tested dirty-input artifact without rebuilding it.
 
@@ -51,10 +51,10 @@ The owner explicitly replaced the persistent full identifier with the compact **
 | Full identity in UI | Guide → About This Build, `#buildDetails` |
 | Current report and payload hashes | `prototype-3d/current-build.json` |
 | Test evidence | `prototype-3d/VALIDATION.md`; ignored browser/camera result files |
-| Earlier accepted reviews | Build 006 and 008 immutable distributions, local baseline branches, and sibling QA evidence folders |
+| Earlier accepted reviews | Builds 006, 008 and 011 immutable distributions, local baseline branches, and sibling QA evidence folders |
 | Contributor instructions | `AGENTS.md`, `prototype-3d/README.md` |
 | CI / PR / remote deployment | Inapplicable to this local-only review; no PR or deployment created |
 
-The core original game state stays at save version 1. The 1.1.0 review wrapper uses version 2, imports earlier version-1 review saves, and stores them under a separate browser key. This is a compatible import path; earlier artifacts and their earlier saves remain available.
+The core original game state stays at save version 1. The current review wrapper uses version 3, imports earlier version-1 and version-2 review saves, and stores them under a separate browser key without changing either earlier value. The wrapper records its review limit so completed earlier milestones can continue normally. Earlier artifacts and their earlier saves remain available.
 
 The build never writes to the repository's accepted `docs/` payload. It reserves an ordinal before output; failed attempts retain their reservation. Retesting and reopening an artifact preserve its identity. Full metadata and source fingerprints remain fixed at build time rather than being generated on page load. The focused consistency check compares the compact label to the authoritative fields and validates the full manifest, all payload hashes, source fingerprint, immutable distribution, and allocator lock.

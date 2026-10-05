@@ -1,23 +1,17 @@
-# A Town Takes Shape — Local Review Notes
+# A Town Takes Shape — Full Local Review Notes
 
-The owner approved **1.1.0 A Town Takes Shape** and faithful Rounds 2–5 after accepting build 008's camera controls and layout. This review keeps those controls, the original illustrations, existing models, setup, and Round 1. It adds only the remaining actions and presentation required through Round 5.
+The owner authorized completing all original Urban Game rounds, then improving a few 3D models against the permanent 2D illustrations. The current branch is `review/3d-full-game`. No prototype has been pushed or deployed.
 
-## New Playable Rounds
+## Original Rounds And Closing
 
-Round 2 grows the village to 15 houses. Round 3 opens the commons, grows it to 20 houses, and places the new nice house within the former commons. Round 4 adds a river-powered factory and reaches 25 houses. Round 5 adds workers' homes and services, reaching 40 houses, with optional roads and one additional bridge crossing. A second crossing blocks completion until corrected.
+Setup and Rounds 1–20 use the byte-identical original rules. The review includes commons opening, river-powered factories, tenement proximity, the convenient-church acknowledgement, exactly five demolished houses, steam-era smoke, one iron crossing, the connected factory/mine railway, a separate west-to-east railway, all later civic buildings, and the original final additions. Each round uses its actual original PowerPoint heading, avoiding the alternate deck's shifted slide numbers. All 33 source images are restored byte-for-byte.
 
-Both decks' original narratives remain unchanged and selectable. The factory's brick mill and wooden wheel fit its original four-square footprint; no steam-era smoke is added. The commons fence disappears when building opens there, while the former area remains shaded. No economy, scoring, new historical events, or intermediate reflection prompts are introduced. See the [Focused Audit](../documentation/ROUNDS_2_TO_5_REVIEW.md) for inherited interpretations and the exact source requirements.
+The final round marks the original game finished and records snapshot 20 once. The exact urbanization conclusion and both original question sets are available. Reflection answers persist in the original core save fields and export as text. No economy, score, extra events, or historical corrections are introduced. Inherited ambiguities remain explicit in the [Source Audit](../documentation/ROUND_FIDELITY_AUDIT.md).
 
-Placing the first factory exposed an inspector refresh issue: Focus stayed disabled until selection changed. Successful placement now refreshes the inspector immediately, so a new building can be examined at once.
+## Accepted Controls And Earlier Saves
 
-## Accepted Controls And Compact Label
+Accepted screen-relative panning, orbit controls, cancellation recovery, zoom, overhead view, floating panels, and compact header remain in place. Guide's About This Build retains full identity and source metadata. Camera and pointer-handler source blocks remain byte-identical to accepted Build008.
 
-Build 008's screen-relative pan, middle-button orbit, low-angle camera boundary, cancellation recovery, wheel zoom, overhead view, floating panels, and split header remain in place. Original 2D illustrations are permanent panel artwork; 3D geometry remains deliberately simple.
+Version 3 review saves use a separate browser key and import earlier version 1/2 reviews without overwriting either older key or advancing their village automatically. An intermediate review's recorded endpoint allows completed earlier saves to continue normally. The accepted 2D save is never read or written.
 
-The header now uses the owner's compact `version codename BuildNNN` format. The actual approved version and codename are used; format examples were not treated as release changes. Guide's About This Build section and the manifest retain the full canonical identifier, fixed UTC build time, and complete source revision.
-
-## Save Compatibility And Boundaries
-
-Earlier version-1 review saves migrate to a version-2 wrapper and a separate browser key without overwriting the original. Completed Round 1 villages can begin Round 2 normally. Incomplete progress remains in its original round. The review stops at Round 5; it does not mark the full 20-round game finished or permit Round 6 imports.
-
-Builds 006 and 008, source branches, and their original QA evidence remain preserved. The latest exact identity is in [Current Build](current-build.json), with results in [Validation](VALIDATION.md). No 3D content has been pushed or deployed. Accepted Pages remains at `5059061dea9c106de5f70d25a6e238629ac76217`, and the private Site is unchanged.
+Builds 006, 008 and 011, their source branches, immutable artifacts, and original QA evidence remain preserved. Source and validation checkpoints are in [Full Game Review](../documentation/FULL_GAME_REVIEW.md). The accepted public Pages commit remains `5059061dea9c106de5f70d25a6e238629ac76217`; the private Site is unchanged.
