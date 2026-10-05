@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { buildingModel, clearGroup, tileMesh } from './models.js';
 import { STORAGE, PREVIOUS_STORAGE, LEGACY_STORAGE, LAST_ROUND, preparedVillage, blankVillage, validateReview, advanceReview } from './review-state.js';
 
+import { bridgeModel, railwayModel, smokeModel, smokeBounds } from './transport.js';
 import { roundSource, reflectionQuestions } from './source-content.js';
 
 const R=globalThis.UrbanRules,$=id=>document.getElementById(id),W=R.WIDTH,H=R.HEIGHT;
@@ -48,9 +49,12 @@ function renderTown(){
  for(const [layer,color] of [['road','#c2b18b'],['river','#6f9fa4'],['canal','#50888d']])for(const key of Object.keys(s.terrain[layer])){
   const [x,y]=key.split(',').map(Number),[wx,wz]=world(x,y);const tile=tileMesh(.98,.98,layer==='road'?.033:.045,color);tile.position.set(wx,.012,wz);townGroup.add(tile);
  }
- for(const [key,bridge] of Object.entries(s.terrain.bridge)){const [x,y]=key.split(',').map(Number),[wx,wz]=world(x,y);for(let i=0;i<5;i++){const plank=tileMesh(.98,.15,.065,'#a58653');plank.position.set(wx,.06,wz-.38+i*.19);townGroup.add(plank);}}
+ for(const [key,bridge] of Object.entries(s.terrain.bridge)){const [x,y]=key.split(',').map(Number),[wx,wz]=world(x,y),horizontal=Object.hasOwn(s.terrain.road,(x-1)+','+y)||Object.hasOwn(s.terrain.road,(x+1)+','+y),model=bridgeModel(bridge,horizontal);model.position.set(wx,0,wz);townGroup.add(model);}
+ for(const [number,layer] of [[1,s.terrain.rail1],[2,s.terrain.rail2]])for(const key of Object.keys(layer)){const [x,y]=key.split(',').map(Number),[wx,wz]=world(x,y),water=Object.hasOwn(s.terrain.river,key)||Object.hasOwn(s.terrain.canal,key),model=railwayModel(layer,key,water,number);model.position.set(wx,0,wz);townGroup.add(model);}
+ if(s.round>=11)for(const building of s.structures.filter(b=>b.type==='factory')){const model=smokeModel(building,s.round),bounds=smokeBounds(building),[x,z]=world(bounds.x,bounds.y,4);model.position.set(x,0,z);townGroup.add(model);}
+
  if(s.commons){const [wx,wz]=world(s.commons.x,s.commons.y,10);const reserve=tileMesh(9.94,9.94,.015,s.round<3?'#bdb787':'#b5bf94');reserve.position.set(wx,.025,wz);townGroup.add(reserve);if(s.round<3)for(let i=0;i<=10;i++)for(const [x,z] of [[wx-5+i,wz-5],[wx-5+i,wz+5],[wx-5,wz-5+i],[wx+5,wz-5+i]]){const post=tileMesh(.075,.075,.27,'#ad9461');post.position.set(x,.04,z);townGroup.add(post);}}
- for(const building of s.structures){const model=buildingModel(building.type),[x,z]=world(building.x,building.y,building.size);model.position.set(x,.07,z);model.userData.buildingId=building.id;townGroup.add(model);}
+ for(const building of s.structures){const model=buildingModel(building.type,s.round),[x,z]=world(building.x,building.y,building.size);model.position.set(x,.07,z);model.userData.buildingId=building.id;townGroup.add(model);}
  updateHighlight();
 }
 function cellAt(event){const rect=canvas.getBoundingClientRect();pointerVector.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointerVector,camera);const point=raycaster.ray.intersectPlane(groundPlane,new T.Vector3());return point?{x:Math.floor(point.x+W/2),y:Math.floor(point.z+H/2)}:null;}
@@ -178,4 +182,4 @@ window.addEventListener('beforeunload',()=>{finishInteraction();if(!loadError)pe
 try{const manifest=JSON.parse($('review-build-manifest').textContent);$('buildIdentity').textContent=manifest.display_label;globalThis.URBAN_REVIEW_BUILD=manifest;}catch(e){$('buildIdentity').textContent='Local Development Session';}
 renderAll();if(innerWidth<720){$('journalToggle').click();$('toolsToggle').click();}if(loadError)status(loadNotice,true);else if(migratedLegacy){persist();status('Your earlier 3D village is ready to continue. Its original save is kept separately.');}else status(review.reviewComplete?`Round ${LAST_ROUND} complete. Explore your saved village.`:state().round===0?'Continue your setup using the original checklist.':`Round ${state().round} is ready. Follow the original checklist.`);
 
-globalThis.__URBAN_REVIEW__={read:()=>R.clone(review),interaction:()=>({activePointer:active?.id??null,navigationPointers:[...navigationPointers.keys()],mode,selected,movingId}),camera:()=>({zoom:camera.zoom,position:camera.position.toArray(),target:controls.target.toArray(),viewMode,azimuth:controls.getAzimuthalAngle(),polar:controls.getPolarAngle()}),cellToScreen:(x,y)=>{const [wx,wz]=world(x,y),v=new T.Vector3(wx,.03,wz).project(camera);return {x:(v.x+1)/2*innerWidth,y:(1-v.y)/2*innerHeight};}};
+globalThis.__URBAN_REVIEW__={read:()=>R.clone(review),visuals:()=>townGroup.children.filter(o=>o.userData.smokeBounds||o.userData.railway||o.userData.bridgeMaterial).map(o=>({...o.userData,position:o.position.toArray()})),interaction:()=>({activePointer:active?.id??null,navigationPointers:[...navigationPointers.keys()],mode,selected,movingId}),camera:()=>({zoom:camera.zoom,position:camera.position.toArray(),target:controls.target.toArray(),viewMode,azimuth:controls.getAzimuthalAngle(),polar:controls.getPolarAngle()}),cellToScreen:(x,y)=>{const [wx,wz]=world(x,y),v=new T.Vector3(wx,.03,wz).project(camera);return {x:(v.x+1)/2*innerWidth,y:(1-v.y)/2*innerHeight};}};

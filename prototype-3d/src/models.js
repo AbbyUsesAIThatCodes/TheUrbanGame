@@ -10,7 +10,7 @@ function roof(g,w,d,h,base,color){
 function tree(g,x,z,scale=1){box(g,.12*scale,.65*scale,.12*scale,'#78593c',x,.32*scale,z);mesh(g,new T.ConeGeometry(.35*scale,.8*scale,7),'#527347',x,.93*scale,z);mesh(g,new T.ConeGeometry(.28*scale,.63*scale,7),'#668b50',x,1.28*scale,z);}
 function door(g,x,y,z,w=.15,h=.3){box(g,w,h,.025,'#574539',x,y,z);}
 function windows(g, xs, y, z){for(const x of xs)box(g,.11,.13,.025,'#decb8e',x,y,z);}
-export function buildingModel(type){
+export function buildingModel(type,round=0){
  const g=new T.Group();g.userData.type=type;
  if(type==='house'){
    box(g,.72,.55,.72,'#e0d0a4');roof(g,.86,.85,.38,.55,'#a76041');door(g,0,.16,.371);windows(g,[-.24,.24],.35,.371);box(g,.11,.39,.12,'#745743',.22,.87,-.17);
@@ -34,6 +34,7 @@ export function buildingModel(type){
    windows(g,[-.43,-.14,.14,.43],.4,.704);windows(g,[-.43,-.14,.14,.43],.8,.704);door(g,0,.22,.72,.2,.36);
    const wheel=mesh(g,new T.TorusGeometry(.3,.05,6,12),'#74573b',-.84,.45,0);wheel.rotation.y=Math.PI/2;
    box(g,.06,.64,.055,'#9a7950',-.84,.45,0);box(g,.06,.055,.64,'#9a7950',-.84,.45,0);
+   if(round>=11){box(g,.22,2.05,.24,'#947059',.66,1.075,-.62);box(g,.3,.11,.32,'#766451',.66,2.12,-.62);}
  }else if(type==='tenement'){
    box(g,1.72,1.72,1.55,'#a2866f');roof(g,1.88,1.72,.35,1.72,'#645e54');for(const y of [.4,.85,1.3])windows(g,[-.62,-.3,0,.3,.62],y,.787);door(g,0,.18,.797,.18,.36);for(const x of [-.55,.55])box(g,.15,.4,.15,'#796953',x,1.96,-.3);
  }else if(type==='school'){

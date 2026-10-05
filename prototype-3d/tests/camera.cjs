@@ -70,7 +70,7 @@ const pass=(name)=>{results.checks.push(name);console.log('PASS '+name);};
   await page.locator('#guideButton').click();const m=await page.evaluate(()=>URBAN_REVIEW_BUILD),details=await page.locator('#buildDetails').innerText();for(const value of [m.identifier,m.build_time_utc,m.source_revision])assert(details.includes(value));await page.locator('#buildDetails').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'about-build.png')});await page.locator('#closeModal').click();
   pass('Split header shows the compact label, year, round, and actions without a footer or overlaps at 1600, 1000, 720, and 390 pixels');
   const baselineSave=path.join(__dirname,'fixtures/build-006-round-1-review.json');
-  await page.locator('#saveFile').setInputFiles(baselineSave);await page.locator('#confirmOpen').click();assert.equal((await read()).reviewComplete,false);assert.equal((await read()).version,2);assert.equal((await read()).state.round,1);
+  await page.locator('#saveFile').setInputFiles(baselineSave);await page.locator('#confirmOpen').click();assert.equal((await read()).reviewComplete,false);assert.equal((await read()).version,3);assert.equal((await read()).state.round,1);
   if(await page.locator('#journalToggle').getAttribute('aria-expanded')==='false')await page.locator('#journalToggle').click();await page.locator('#nextButton').click();assert.equal((await read()).state.round,2);
   pass('A build 006 review save migrates without losing progress and can continue into Round 2');
   assert.deepEqual(results.errors,[]);pass('No JavaScript errors during camera or header checks');results.status='passed';

@@ -17,3 +17,13 @@ The owner authorized all original rounds, then selected 3D model improvements. P
 Orthogonal tenement distance remains at most five; Round10 retains river power; the qualitative church placement acknowledgement remains manual. The shorter deck's Round8–10 narratives are slides16–18, while the full deck uses17–19. Rounds11 onward use the full deck. These preserve the original recovered implementation and documented classroom ambiguities.
 
 Automated browser evidence uses isolated Chromium/software WebGL. It does not establish physical touch or classroom-device performance, and never controls the owner's Vivaldi session.
+
+## Build013 — Rounds 11–15
+
+Canonical build: `1.1.0_A-Town-Takes-Shape_local-3d-review_build-013_20261005T015409Z_g8f919aa33711_dirty-39be003c3139_3d-review`.
+
+Added steam-era factory chimneys and exact original 4×4 smoke shading, wood/iron crossing rendering, and connected rail rendering with water bridges. All factories, including earlier ones, receive shading from Round11. The short source deck is visibly unavailable after Round10. Corrected two stale static scope labels left in Build012; gameplay and manifest scope had already been correct.
+
+The 28 source/model/simulation tests passed. Headless Chromium completed every Round11–15 action, checked original text/images, blocked incomplete rounds, verified rendered smoke/iron/rail counts, and downloaded/reloaded/reopened each boundary save. It reported no script/network errors and preserved accepted 2D storage. Build verification passed all49 payload files and unchanged original/Pages baselines.
+
+The first browser run stopped at a test assertion: Playwright's disabled-state query did not report the disabled option. DOM inspection confirmed the native `disabled` attribute and property; the corrected property assertion passed. No gameplay change was needed for that test issue.
