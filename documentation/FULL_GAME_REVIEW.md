@@ -54,3 +54,9 @@ Built from clean source `62903917e492f31ce81214bd04367dd0ad4fefe1`, with runtime
 The remaining checks are complete: 43 unit tests, 23 full-browser groups through all20 rounds and final reflections, and four late-action groups passed on Build018. All50 payload hashes match; there were no script errors, asset failures or navigation cancellations. Original sources, accepted controls and immutable prior builds remain unchanged. See [Current Validation](../prototype-3d/VALIDATION.md) and [Build018 Evidence](validation/build-018/).
 
 Only review branches were uploaded. Main and Pages remain at `5059061dea9c106de5f70d25a6e238629ac76217`; the prototype was not merged or deployed. These headless Chromium checks do not establish physical touch, other browser engines or classroom-hardware performance.
+
+## Build019 - Round9 Tool Wording
+
+Canonical identity: `1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review`. The owner-approved wording correction names Erase This Round and Destroy House, keeps the Round9 hint consistent, and directs Erase attempts on eligible older Round9 houses to the correct tool. Recovered rules and all original content remain unchanged; no export-metadata change is included.
+
+All43 unit tests, seven new UI groups, four late-action groups, 23 complete-walkthrough groups and three preview-handoff groups passed. Build018 is preserved. The separate review path shares its browser origin and retains existing saves when navigating the same tab. See [Round9 Review](ROUND9_WORDING_REVIEW.md) and [Build019 Evidence](validation/build-019/).

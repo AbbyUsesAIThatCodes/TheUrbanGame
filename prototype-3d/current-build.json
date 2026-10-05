@@ -1,12 +1,12 @@
 {
-  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review",
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
   "manifest": "dist/build-manifest.json",
-  "output_directory": ".builds/1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review",
+  "output_directory": ".builds/1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
   "payload_sha256": {
-    "app.js": "9bd2761aafa6b4ae6dbd642731e264e476fb152ebd268d245da3ef39394b305d",
-    "build-manifest.json": "3e8d99c74c12a07fc153d98f1a8d76c73d759ea1741d3802d67ca1fb7be5ad5f",
+    "app.js": "d9d1f35e3e5d520f76be8362de64445efac5999df23c84de256e9ea33a3eb714",
+    "build-manifest.json": "5f8b8f09f61746049a8c48486b5dceaaa0461a984f75f4cdf9ff0afa32827d4a",
     "crafted-models.js": "8e2b28c17dd7f64ac3e6c1c488de5549644af5a3deab4a230ee0fd28d7ca1990",
-    "index.html": "436e027e9428eb4000f99cf1d4e03693327f8db879a42b2c14435afe8fe4f2ed",
+    "index.html": "425fc9facdc680c3ae6f33fff3e4d1160e9fbc8c46c1f4a2d1af976cb184fd42",
     "models.js": "2983ea3db76ececadfdc08fb6bb49e7f005525b93086ebaf2bc434615740ef19",
     "review-state.js": "10c4f7f9dbf064b07583f8583c987661a5bf8c6a91f81737013c861b4790caa6",
     "source-content.js": "b9cb6fa947be17e93e243fde13c586bfddcc19ca77355b2ba7da352adedb5f9a",

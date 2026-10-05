@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "build018": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review",
+  "old_preview_payloads": "all unchanged",
+  "old_immutable_payloads": "all unchanged",
+  "earlier_archives": "all unchanged",
+  "accepted_camera_and_pointer_blocks": "byte-identical to Build008",
+  "build019_archive": {
+    "ordinal": 19,
+    "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
+    "archive": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review.zip",
+    "bytes": 13692001,
+    "sha256": "4da0424da7234da53cbf3cd1c057d134541ded6d91e33102eb48a0b2a6a8cd3c",
+    "payload_files": 50,
+    "source_fingerprint_sha256": "9399ffc60f30988e9d7d35b0618fe126f9d29ad7dbc68a244257710108df20a0",
+    "source_revision": "b78f020777fa12a9b66334444cd781897c204cff"
+  }
+}

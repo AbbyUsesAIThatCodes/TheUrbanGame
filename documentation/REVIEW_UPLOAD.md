@@ -1,4 +1,8 @@
-# Review Branch Preservation
+# Current Review Preservation
+
+The owner-approved Build019 wording correction is on `review/3d-round9-wording`, with source, versioned archive and [validation evidence](validation/build-019/). The Build018 baseline remains on `review/3d-full-game`. No merge or Pages deployment is authorized by this correction. See [Round9 Wording Review](ROUND9_WORDING_REVIEW.md) for the current build and local review URL.
+
+# Earlier Full-Game Preservation
 
 Current source, immutable Builds015/017/018 and validation evidence are preserved on [review/3d-full-game](https://github.com/AbbyUsesAIThatCodes/TheUrbanGame/tree/review/3d-full-game). The owner authorized this backup before departure; main and Pages remain unchanged.
 

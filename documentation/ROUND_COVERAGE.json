@@ -1,5 +1,5 @@
 {
-  "build": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review",
+  "build": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
   "coverage": [
     {
       "round": 1,
@@ -434,5 +434,6 @@
   "snapshots": 21,
   "source_rule_sha256": "3ead711e66c2e84af5bfffa65365d8d850fc7070204da95d9aa0ef63576da0d9",
   "initial_verification_build": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-015_20261005T020100Z_g70c9bf0269b4_dirty-b3056408f982_3d-review",
-  "browser_report": "validation/build-018/full-browser-1-20.json"
+  "browser_report": "validation/build-019/full-browser-1-20.json",
+  "previous_verification_build": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review"
 }

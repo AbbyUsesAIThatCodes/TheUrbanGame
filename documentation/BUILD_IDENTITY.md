@@ -50,7 +50,7 @@ The owner explicitly replaced the persistent full identifier with the compact **
 | Compact visible label | `dist/index.html`, `#buildIdentity` in the upper-left title banner |
 | Full identity in UI | Guide → About This Build, `#buildDetails` |
 | Current report and payload hashes | `prototype-3d/current-build.json` |
-| Test evidence | `prototype-3d/VALIDATION.md`; tracked `documentation/validation/build-017/` and `build-018/` reports |
+| Test evidence | `prototype-3d/VALIDATION.md`; tracked `documentation/validation/build-017/`, `build-018/` and `build-019/` reports |
 | Earlier accepted reviews | Builds 006, 008 and 011 immutable distributions, local baseline branches, and sibling QA evidence folders |
 | Contributor instructions | `AGENTS.md`, `prototype-3d/README.md` |
 | Remote source backup | `review/3d-full-game`; preserved Build015 and Build017 checkpoint branches |
@@ -60,3 +60,9 @@ The owner explicitly replaced the persistent full identifier with the compact **
 The core original game state stays at save version 1. The current review wrapper uses version 3, imports earlier version-1 and version-2 review saves, and stores them under a separate browser key without changing either earlier value. The wrapper records its review limit so completed earlier milestones can continue normally. Earlier artifacts and their earlier saves remain available.
 
 The build never writes to the repository's accepted `docs/` payload. It reserves an ordinal before output; failed attempts retain their reservation. Retesting and reopening an artifact preserve its identity. Full metadata and source fingerprints remain fixed at build time rather than being generated on page load. The focused consistency check compares the compact label to the authoritative fields and validates the full manifest, all payload hashes, source fingerprint, immutable distribution, and allocator lock.
+
+## Current Wording Review Checkout
+
+The owner-approved Round9 wording fix is on `review/3d-round9-wording` in `TheUrbanGame-round9-wording`. It continues the existing 1.1.0 A Town Takes Shape milestone and durable local-review ledger with Build019. Only this current checkout allocates new builds; the Build018 checkout and ledger are historical, not a second concurrent allocator. The latest canonical identity is in this branch's `prototype-3d/current-build.json`.
+
+The Build019 artifact is also copied to the old preview server's `dist/review-build-019/`, without replacing any Build018 payload. Its URL is `http://127.0.0.1:8770/review-build-019/`; the original root still serves Build018. This path shares the owner's existing storage origin. Build019's isolated test server uses port8771. All copies retain the same manifest and hashes.

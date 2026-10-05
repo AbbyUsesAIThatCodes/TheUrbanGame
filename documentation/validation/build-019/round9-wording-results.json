@@ -1,0 +1,15 @@
+{
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
+  "url": "http://127.0.0.1:8771/",
+  "checks": [
+    "Approved labels and Round9 hint are consistent; labels fit desktop and 390px panels",
+    "Actual Erase This Round button explains old-house removal in Round9 without changing state, save or undo history",
+    "Older nice houses and non-house buildings receive no incorrect Destroy House advice; destruction rejects nice houses",
+    "Current-round pub erasure remains an edit, restores allowance, does not count as destruction, and supports undo/redo",
+    "Destroy House counts exactly five ordinary houses, supports undo/redo, and neither control suggests or allows a sixth",
+    "Round9 demolition progress survives unchanged save download, reload and reopening",
+    "Rounds8/10 retain earlier-building protection and hide destruction; separate save keys remain unchanged"
+  ],
+  "errors": [],
+  "status": "passed"
+}

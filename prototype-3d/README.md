@@ -4,7 +4,7 @@ The owner-authorized **1.1.0 A Town Takes Shape** review covers the original set
 
 ## Open The Review
 
-The current immutable build is served at **http://127.0.0.1:8770/**. Reuse it for review. From `prototype-3d/`, `npm run serve` restarts that same distribution. `current-build.json` identifies its exact build, manifest, versioned directory, and payload hashes. Build outputs are retained under `.builds/<full-ID>/`; `dist/` is the currently served copy.
+The current Build019 wording review is served at **http://127.0.0.1:8770/review-build-019/**. Navigate the existing game tab to this path when ready; it uses the same origin and save key. The original root remains Build018. A separate test server serves this checkout on port8771. From `prototype-3d/`, `npm run serve` serves the current distribution on port8770 when that port is free. `current-build.json` identifies its exact build, manifest, versioned directory, and payload hashes. Build outputs are retained under `.builds/<full-ID>/`; `dist/` is the currently served copy.
 
 For a fresh source checkout, run `npm ci`, `npm run build`, then `npm run serve`. Each real build reserves a new ordinal. Do not rebuild just to change a commit label.
 
@@ -20,7 +20,7 @@ After Round 20, read the exact original conclusion and choose either the board o
 
 ## Controls And Illustrations
 
-Build by selecting a tile and clicking its upper-left grid square. Drag for a continuous route. Move uses two clicks; Escape ends a gesture or cancels a move. Undo/Redo and Ctrl/Cmd+Z remain available.
+Build by selecting a tile and clicking its upper-left grid square. Drag for a continuous route. Move uses two clicks; Escape ends a gesture or cancels a move. Undo/Redo and Ctrl/Cmd+Z remain available. Erase This Round removes current-round additions. In Round9, Destroy House performs the required five-house removal; nice houses do not count.
 
 The accepted controls and layout are preserved: screen-relative Pan & Inspect, middle-button orbit, right-drag rotation, Rotate mode, wheel zoom, north-up Overhead, Frame Village, Focus, and independently collapsible panels. The compact title banner reads **version codename BuildNNN**. Guide → About This Build retains the canonical ID, fixed UTC timestamp and source revision.
 
@@ -32,18 +32,20 @@ The version 3 review wrapper imports version 1 Round 1 and version 2 Round 5 rev
 
 The current browser key is `nch-urban-game-3d-full-review-v3`. If absent, the app copies a valid save first from `nch-urban-game-3d-round5-review-v2`, then from `nch-urban-game-3d-round1-review-v1`. Both earlier values remain untouched. The accepted 2D key `nch-urban-game-v1` is never read or written.
 
-Builds 006, 008, 011 and the complete-game Build015 remain in immutable distributions, local baseline branches, and sibling QA folders. Work continues on `review/3d-full-game`. The owner authorized review-branch uploads for preservation. Current source and immutable Builds015/017/018 are uploaded; see [Review Downloads](../review-builds/README.md). Merging into main and deploying the prototype remain outside this task.
+Builds 006, 008, 011 and the complete-game Build015 remain in immutable distributions, local baseline branches, and sibling QA folders. The wording correction continues on `review/3d-round9-wording`; `review/3d-full-game` preserves Build018. The owner authorized review-branch uploads for preservation. The earlier source and immutable Builds015/017/018 are preserved; Build019 adds the approved wording correction; see [Review Downloads](../review-builds/README.md). Merging into main and deploying the prototype remain outside this task.
 
 ## Validation
 
-Run the browser suites serially against the local server:
+Run the browser suites serially against the selected local server. `URBAN_REVIEW_URL` defaults to `http://127.0.0.1:8770/`; set it to the current Build019 URL or the isolated port8771 server when testing this checkout:
 
 ```powershell
+$env:URBAN_REVIEW_URL='http://127.0.0.1:8771/'
 npm test
 npm run test:browser
 npm run test:camera
 node tests/placement-regression.cjs
 node tests/late-actions.cjs
+node tests/round9-wording.cjs
 node tests/model-visuals.cjs
 $env:START_ROUND='1'
 npm run test:full-browser

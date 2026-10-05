@@ -1,7 +1,7 @@
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'test-output');
-const report={url:'http://127.0.0.1:8770/',checks:[],errors:[],failedRequests:[]};
+const report={url:(process.env.URBAN_REVIEW_URL||'http://127.0.0.1:8770/'),checks:[],errors:[],failedRequests:[]};
 const pass=name=>{report.checks.push(name);console.log('PASS '+name);};
 (async()=>{
  const browser=await chromium.launch({headless:true,args:['--enable-unsafe-swiftshader']});

@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const root=path.resolve(__dirname,'..'),out=path.join(root,'test-output');fs.mkdirSync(out,{recursive:true});
 const laterRounds=require('./fixtures/rounds-2-5.cjs');
 const current=JSON.parse(fs.readFileSync(path.join(root,'current-build.json'),'utf8'));
-const results={url:'http://127.0.0.1:8770/',buildIdentity:current.identifier,checks:[],errors:[],failedRequests:[]};
+const results={url:(process.env.URBAN_REVIEW_URL||'http://127.0.0.1:8770/'),buildIdentity:current.identifier,checks:[],errors:[],failedRequests:[]};
 const pass=(name,detail)=>{results.checks.push({name,detail});console.log('PASS '+name);};
 (async()=>{
 const browser=await chromium.launch({headless:true,args:['--enable-unsafe-swiftshader']});

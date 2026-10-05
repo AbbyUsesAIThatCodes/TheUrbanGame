@@ -1,32 +1,35 @@
 # Review Validation
 
-Validated current artifact: **1.1.0 A Town Takes Shape Build018**.
+Current wording-fix artifact: **1.1.0 A Town Takes Shape Build019**.
 
-Canonical identity: `1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review`.
+Canonical identity: `1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review`.
 
-Built at `2026-10-05T09:35:58.253054+00:00` from clean source `62903917e492f31ce81214bd04367dd0ad4fefe1`. Source fingerprint: `fe4b6b859f57cd353b901afd9b672e4efbf50facc11bf220ffce2e27a4792138`. Later documentation commits preserve this same tested artifact; its identity is not relabeled.
+Built at `2026-10-05T23:15:42.626832+00:00` from clean source `b78f020777fa12a9b66334444cd781897c204cff`. Source fingerprint: `9399ffc60f30988e9d7d35b0618fe126f9d29ad7dbc68a244257710108df20a0`. Documentation and evidence commits retain this artifact without rebuilding or relabeling it.
 
-## Current Build Results
+## Approved Correction
+
+The 3D interface uses **Erase This Round** and **Destroy House**. Its Round9 hint uses the same tool name. Erasing an older ordinary house in Round9, while fewer than five houses have been removed, now says: “To remove an older house, select Destroy House in Build Your Village.” Other targets, completed demolition quotas and other rounds retain the original rule rejection. This changes display text only; the rule engine, classroom sources, game state and export format remain unchanged. Export-metadata issue #1 is separate.
+
+The classroom instruction remains “Destroy 5 houses” in full-deck slide18 and shorter-deck slide17. The preserved source is not rewritten to match interface wording.
+
+## Results
 
 - 43 unit, rule, source, model and save tests passed.
-- 23 full-game browser groups passed: all original Rounds 1-20 through normal UI actions, incomplete-round gates, source narratives and decoded images, every boundary save/reload/reopen, rendered smoke and both railway layers, final questions, answer persistence and text export.
-- Four late-action groups passed: Round9 demolition limits and undo/redo; Round12 iron replacement and repeated clicks; Round14 rail dragging, grouped undo and cancellation recovery; Round17 separate west-to-east rail saving and reopening.
-- No script errors, asset failures or navigation-cancelled requests occurred in the complete walkthrough. The accepted 2D storage sentinel was unchanged.
-- Final village: 196 structures, including 105 houses, 22 factories and 18 tenements; five demolished houses, 21 snapshots and no teacher overrides.
-- All 50 payload hashes match the served and immutable copies. Source fingerprint, compact header, full manifest and allocator lock pass.
-- Four original files, 53 slide texts, 33 source images, the recovered rules and permanent illustrations retain their source identity. Accepted Pages, originals and the root README remain unchanged.
-- Immutable Builds006, 008, 011 and 015 pass their checksums. Accepted camera and pointer-handler source blocks remain byte-identical to Build008.
+- Seven new UI regression groups passed: actual Erase button and contextual guidance; ordinary versus nice/non-house targets; current-round erasure; five-house limit; Undo/Redo; download/reload/reopen; protection in Rounds8/10. Labels fit 1600px and 390px views.
+- Four late-action groups passed, covering demolition, iron replacement and both railway layers.
+- 23 complete-game browser groups passed through all20 rounds, every boundary save/reload/reopen, source narratives and images, final questions, answer persistence and text export. No script errors, asset failures or cancelled requests occurred.
+- Three preview-handoff checks passed: navigation from Build018 to Build019 on the same browser origin retained an exact generated Round9 save; all50 payload hashes and relative URLs at the delivered path matched; returning to Build018 retained the same save.
+- Build consistency, source fingerprint, immutable output and allocator-lock checks passed. Four originals, 53 slide texts, source artwork and recovered rules remain byte-identical.
+- All Build018 preview and immutable payloads and all earlier archived builds retain their hashes. Accepted camera and pointer-handler blocks remain byte-identical to Build008.
 
-Machine-readable reports, unit output, build/source/baseline checks and final screenshots are in [Build018 Evidence](../documentation/validation/build-018/).
+Reports, unit output and screenshots are in [Build019 Evidence](../documentation/validation/build-019/). Earlier Build017 and Build018 reports remain historical evidence under their actual identities; they are not described as reruns on this changed source.
 
-## Earlier Focused Evidence
+## Local Review And Preservation
 
-Build017 passed 19 early-gameplay groups, eight camera/header groups, 11 deep placement/import groups and two model-view groups. These include 27 pan measurements, 12 gesture interruptions, header widths from 390 to 1600 pixels, earlier-save migration, rotated placement, duplicate actions, undo/redo, malformed imports, four focused model views and complete-city reopening. The reports and selected model screenshots are in [Build017 Evidence](../documentation/validation/build-017/).
+Review: **http://127.0.0.1:8770/review-build-019/**. Build018 remains available at **http://127.0.0.1:8770/**. The new path uses the same origin and storage key. Navigate the existing game tab to the new path when ready, so its latest progress is saved before the new page loads. No automation read or changed the owner's browser or saved village.
 
-These focused suites ran on Build017. Build018 has the exact same runtime source fingerprint, so the results remain applicable; they are not presented as Build018 reruns. Build018's own walkthrough and build checks verify its new identity and payloads.
+The isolated test server is `http://127.0.0.1:8771/`. The active source checkout is `TheUrbanGame-round9-wording` on `review/3d-round9-wording`; its ledger continues with ordinal19, without resetting. Build018's original checkout is preserved. See [Review Downloads](../review-builds/README.md).
 
-## Preservation And Limits
+Main and Pages remain at `5059061dea9c106de5f70d25a6e238629ac76217`; no merge or public deployment occurred. The private Site is unchanged.
 
-Source and immutable Builds015, 017 and 018 are backed up on `review/3d-full-game`. See [Review Upload](../documentation/REVIEW_UPLOAD.md), [Downloads](../review-builds/README.md) and [Remote Archive Verification](../documentation/REMOTE_PRESERVATION.json). No merge or prototype deployment was performed. Main remains `5059061dea9c106de5f70d25a6e238629ac76217`; Pages still publishes `main:/docs`. The private Site, billing and Actions artifacts are unchanged.
-
-Automated browser checks use isolated headless Chromium with software WebGL. Physical touch devices, other browser engines and classroom-hardware performance remain unverified. The owner's Vivaldi session and desktop were not controlled.
+Browser coverage uses isolated headless Chromium/software WebGL. Physical touch devices, other browser engines and classroom-device performance remain unverified.

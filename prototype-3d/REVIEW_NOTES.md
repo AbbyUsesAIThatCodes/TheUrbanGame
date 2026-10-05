@@ -1,6 +1,6 @@
 # A Town Takes Shape — Full Local Review Notes
 
-The owner authorized completing all original Urban Game rounds, then improving a few 3D models against the permanent 2D illustrations. The current branch is `review/3d-full-game`. The owner authorized review-branch backup; current source and Builds015/017/018 are now preserved on GitHub. The prototype has not been merged or deployed.
+The owner authorized completing all original Urban Game rounds, then improving a few 3D models against the permanent 2D illustrations. The full-game baseline is `review/3d-full-game`; the current approved wording fix is `review/3d-round9-wording`. The owner authorized review-branch backup; current source and Builds015/017/018 are now preserved on GitHub. The prototype has not been merged or deployed.
 
 ## Original Rounds And Closing
 
@@ -19,3 +19,7 @@ Builds 006, 008 and 011, their source branches, immutable artifacts, and origina
 ## Artwork-Inspired Model Refinements
 
 After the complete Build015 walkthrough passed, the actual permanent atlas was inspected. The cottage, nice house and factory were then refined with stone/brick facades, detailed roofs, framed and arched windows, the manor’s formal entrance, and separate water-powered/steam-era factory forms. Rear and side facades are modeled for orbit viewing. All geometry stays within its original footprint; no game-state fields, rules, controls or historical wording changed. Shared geometry and vertex colors batch the model details without external textures. Focused and rotated headless screenshots were visually inspected against the original artwork.
+
+## Round9 Tool Wording
+
+Build019 applies only the approved Erase This Round / Destroy House labels and contextual old-house guidance, with a matching Round9 hint. The rules, original sources, models, controls and export format remain unchanged. Build018 stays preserved. See [Round9 Wording Review](../documentation/ROUND9_WORDING_REVIEW.md).
