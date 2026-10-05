@@ -7,6 +7,7 @@ const R=globalThis.UrbanRules,$=id=>document.getElementById(id),W=R.WIDTH,H=R.HE
 const sourceDecks=await (await fetch('recovered/sources.json')).json();
 let review=preparedVillage(),undo=[],redo=[],selected='inspect',mode='pan',movingId=null,active=null,hover=null,inspectedId=null,inspectedType='mine',viewMode='3d',inspectionClick=null;
 let loadNotice='';
+const navigationPointers=new Map();
 try{const saved=localStorage.getItem(STORAGE);if(saved)review=validateReview(JSON.parse(saved));}catch(e){loadNotice='The previous review save could not be opened. It has not been overwritten; use Save & Open to choose a backup.';}
 const state=()=>review.state;
 const titleCase=text=>text.replace(/\b\w/g,c=>c.toUpperCase());
@@ -25,7 +26,9 @@ renderer.domElement.id='villageCanvas';renderer.domElement.tabIndex=0;renderer.d
 $('town').append(renderer.domElement);$('loading').remove();
 const canvas=renderer.domElement,scene=new T.Scene();scene.background=new T.Color('#d0d9c3');scene.fog=new T.Fog('#d0d9c3',90,190);
 const camera=new T.OrthographicCamera(-35,35,23,-23,.1,250);
-const controls=new OrbitControls(camera,canvas);controls.enableDamping=true;controls.dampingFactor=.12;controls.screenSpacePanning=false;controls.minZoom=.55;controls.maxZoom=10;controls.maxPolarAngle=Math.PI*.43;controls.minPolarAngle=.15;controls.zoomToCursor=true;controls.rotateSpeed=.65;controls.panSpeed=.8;controls.maxTargetRadius=35;
+// Orthographic screen-space panning follows the pointer equally on both axes at every angle/zoom.
+// Direct movement avoids damping lag and stops immediately when a gesture ends.
+const controls=new OrbitControls(camera,canvas);controls.enableDamping=false;controls.screenSpacePanning=true;controls.minZoom=.55;controls.maxZoom=10;controls.maxPolarAngle=Math.PI*.43;controls.minPolarAngle=.15;controls.zoomToCursor=true;controls.rotateSpeed=.65;controls.panSpeed=1;controls.maxTargetRadius=35;
 scene.add(new T.HemisphereLight('#fff8df','#81946f',2.3));
 const sun=new T.DirectionalLight('#fff0cf',3.1);sun.position.set(-18,38,15);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-27,right:27,top:27,bottom:-27,near:.5,far:95});sun.shadow.bias=-.0005;sun.shadow.normalBias=.025;scene.add(sun);
 const surround=new T.Mesh(new T.PlaneGeometry(500,500),new T.MeshStandardMaterial({color:'#cbd5bc',roughness:1}));surround.rotation.x=-Math.PI/2;surround.position.y=-.76;surround.receiveShadow=true;scene.add(surround);
@@ -56,11 +59,23 @@ function updateHighlight(){
  const type=moving?.type||selected;const error=R.TYPES[type]?R.buildingError(state(),type,hover.x,hover.y,movingId):!R.inside(hover.x,hover.y,size);
  const [x,z]=world(hover.x,hover.y,size);highlight.scale.set(size,1,size);highlight.position.set(x,.082,z);hoverMaterial.color.set(error?'#c75e49':'#f3d782');highlight.visible=true;
 }
-function setMode(next){finishInteraction();mode=next;controls.mouseButtons.LEFT=next==='build'?null:next==='rotate'?T.MOUSE.ROTATE:T.MOUSE.PAN;controls.mouseButtons.MIDDLE=T.MOUSE.DOLLY;controls.mouseButtons.RIGHT=viewMode==='overhead'?T.MOUSE.PAN:T.MOUSE.ROTATE;controls.touches.ONE=next==='rotate'?T.TOUCH.ROTATE:T.TOUCH.PAN;controls.touches.TWO=T.TOUCH.DOLLY_PAN;$('panMode').setAttribute('aria-pressed',String(next==='pan'));$('rotateMode').setAttribute('aria-pressed',String(next==='rotate'));canvas.style.cursor=next==='build'?'crosshair':next==='rotate'?'grab':'grab';updateHighlight();}
-function setView(view,frame=false){finishInteraction();viewMode=view;controls.enableDamping=false;controls.minPolarAngle=view==='overhead'?.0001:.15;controls.maxPolarAngle=view==='overhead'?.0001:Math.PI*.43;controls.enableRotate=view!=='overhead';if(frame)controls.target.set(0,0,0);const target=controls.target.clone();camera.up.set(0,1,0);camera.position.copy(target).add(view==='overhead'?new T.Vector3(0,65,.0065):new T.Vector3(32,39,38));if(frame)camera.zoom=1;resize();controls.update();controls.enableDamping=true;$('overheadButton').setAttribute('aria-pressed',String(view==='overhead'));$('isometricButton').setAttribute('aria-pressed',String(view==='3d'));document.querySelector('.north').textContent=view==='overhead'?'N ↑':'3D';setMode(mode==='rotate'&&view==='overhead'?'pan':mode);updateZoom();}
+function setMode(next){finishInteraction();mode=next;controls.mouseButtons.LEFT=next==='build'?null:next==='rotate'?T.MOUSE.ROTATE:T.MOUSE.PAN;controls.mouseButtons.MIDDLE=T.MOUSE.ROTATE;controls.mouseButtons.RIGHT=viewMode==='overhead'?T.MOUSE.PAN:T.MOUSE.ROTATE;controls.touches.ONE=next==='rotate'?T.TOUCH.ROTATE:T.TOUCH.PAN;controls.touches.TWO=T.TOUCH.DOLLY_PAN;$('panMode').setAttribute('aria-pressed',String(next==='pan'));$('rotateMode').setAttribute('aria-pressed',String(next==='rotate'));canvas.style.cursor=next==='build'?'crosshair':next==='rotate'?'grab':'grab';updateHighlight();}
+function setView(view,frame=false){finishInteraction();viewMode=view;controls.enableDamping=false;controls.minPolarAngle=view==='overhead'?.0001:.15;controls.maxPolarAngle=view==='overhead'?.0001:Math.PI*.43;controls.enableRotate=view!=='overhead';if(frame)controls.target.set(0,0,0);const target=controls.target.clone();camera.up.set(0,1,0);camera.position.copy(target).add(view==='overhead'?new T.Vector3(0,65,.0065):new T.Vector3(32,39,38));if(frame)camera.zoom=1;resize();controls.update();controls.enableDamping=false;$('overheadButton').setAttribute('aria-pressed',String(view==='overhead'));$('isometricButton').setAttribute('aria-pressed',String(view==='3d'));document.querySelector('.north').textContent=view==='overhead'?'N ↑':'3D';setMode(mode==='rotate'&&view==='overhead'?'pan':mode);updateZoom();}
 function updateZoom(){$('zoomLabel').textContent=Math.round(camera.zoom*100)+'%';}
-function resize(){const w=innerWidth,h=innerHeight,half=Math.max(23,(viewMode==='overhead'?W+3:45)/(2*w/h));camera.left=-half*w/h;camera.right=half*w/h;camera.top=half;camera.bottom=-half;camera.updateProjectionMatrix();renderer.setSize(w,h);}
+function resize(){document.documentElement.style.setProperty('--panel-top',Math.ceil(document.querySelector('.topbar').getBoundingClientRect().bottom+12)+'px');const w=innerWidth,h=innerHeight,half=Math.max(23,(viewMode==='overhead'?W+3:45)/(2*w/h));camera.left=-half*w/h;camera.right=half*w/h;camera.top=half;camera.bottom=-half;camera.updateProjectionMatrix();renderer.setSize(w,h);}
 function zoomBy(factor){camera.zoom=Math.max(controls.minZoom,Math.min(controls.maxZoom,camera.zoom*factor));camera.updateProjectionMatrix();updateZoom();}
+const orbitDirection=new T.Vector3(),groundTarget=new T.Vector3(),cameraCorrection=new T.Vector3();
+function keepOrbitAboveBoard(){
+ // Orthographic movement along the view ray leaves the screen image unchanged.
+ // Project the orbit pivot back to ground so later rotations cannot go below the board.
+ camera.getWorldDirection(orbitDirection);
+ groundTarget.copy(controls.target).addScaledVector(orbitDirection,-controls.target.y/orbitDirection.y);
+ groundTarget.y=0;groundTarget.clampLength(0,35);
+ cameraCorrection.copy(groundTarget).sub(controls.target);
+ controls.target.copy(groundTarget);camera.position.add(cameraCorrection);camera.updateMatrixWorld();
+}
+new ResizeObserver(resize).observe(document.querySelector('.topbar'));
+controls.addEventListener('change',keepOrbitAboveBoard);
 controls.addEventListener('change',updateZoom);window.addEventListener('resize',resize);resize();setView('3d',true);
 renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera);});
 
@@ -75,22 +90,39 @@ function applyCell(cell){if(!cell||!R.inside(cell.x,cell.y)||review.roundOneComp
  status(`${toolName(selected)} · Column ${cell.x+1}, Row ${cell.y+1}`);renderTown();renderTasks();return true;
 }
 function finishInteraction(event){
+ finishNavigation(event);
  if(!active)return;if(event?.pointerId!==undefined&&event.pointerId!==active.id)return;
  const ended=active;active=null; // Clear before releasing capture: lostpointercapture may fire immediately.
  try{if(canvas.hasPointerCapture(ended.id))canvas.releasePointerCapture(ended.id);}catch(e){}
  remember(ended.before);renderPalette();renderTasks();updateHighlight();
 }
+function finishNavigation(event){
+ if(!navigationPointers.size||event?.pointerId!==undefined&&!navigationPointers.has(event.pointerId))return;
+ // Normal release remains with OrbitControls, including its two-finger transition.
+ if(event?.type==='pointerup'){navigationPointers.delete(event.pointerId);return;}
+ const pointers=[...navigationPointers.keys()];navigationPointers.clear();inspectionClick=null;
+ // Public disconnect/connect clears an interrupted orbit without altering the camera or village.
+ controls.disconnect();
+ for(const id of pointers)try{if(canvas.hasPointerCapture(id))canvas.releasePointerCapture(id);}catch(e){}
+ controls.connect(canvas);canvas.style.cursor=mode==='build'?'crosshair':'grab';
+}
 canvas.addEventListener('pointerdown',event=>{
- if(event.button!==0)return;
- if(mode!=='build'){inspectionClick={x:event.clientX,y:event.clientY};return;}
+ if(event.button===1)event.preventDefault();
+ if(event.button!==0||mode!=='build'){
+  if(active)finishInteraction();
+  navigationPointers.set(event.pointerId,{mask:event.button===1?4:event.button===2?2:1});
+  inspectionClick=event.button===0?{x:event.clientX,y:event.clientY}:null;return;
+ }
  if(!event.isPrimary)return;event.preventDefault();event.stopImmediatePropagation();finishInteraction();canvas.focus({preventScroll:true});
  let cell=cellAt(event);if(selected==='move'&&!movingId){const b=buildingAtPointer(event);if(b)cell={x:b.x,y:b.y};}hover=cell;if(!cell||!R.inside(cell.x,cell.y))return;
  active={id:event.pointerId,before:R.clone(review),last:cell};canvas.setPointerCapture(event.pointerId);applyCell(cell);updateHighlight();
 },true);
 canvas.addEventListener('pointermove',event=>{
+ const navigation=navigationPointers.get(event.pointerId);
+ if(navigation&&event.pointerType==='mouse'&&(event.buttons&navigation.mask)===0){finishNavigation(event);event.stopImmediatePropagation();return;}
  hover=cellAt(event);$('pointerCell').textContent=hover&&R.inside(hover.x,hover.y)?`Column ${hover.x+1}, Row ${hover.y+1}`:'Pan to Explore · Wheel to Zoom';
  if(active&&event.pointerId===active.id){
-  if(event.pointerType==='mouse'&&(event.buttons&1)===0){finishInteraction(event);return;}
+  if(event.pointerType==='mouse'&&event.buttons!==1){finishInteraction(event);event.stopImmediatePropagation();return;}
   if(drawingTools.has(selected)&&hover&&R.inside(hover.x,hover.y)){
    let {x,y}=active.last;for(let steps=0;(x!==hover.x||y!==hover.y)&&steps<W+H;steps++){if(x!==hover.x)x+=Math.sign(hover.x-x);else y+=Math.sign(hover.y-y);applyCell({x,y});}active.last=hover;
   }
@@ -99,12 +131,14 @@ canvas.addEventListener('pointermove',event=>{
 },true);
 canvas.addEventListener('pointerup',event=>{
  if(active){event.stopImmediatePropagation();finishInteraction(event);return;}
- if(mode==='pan'&&inspectionClick&&Math.hypot(event.clientX-inspectionClick.x,event.clientY-inspectionClick.y)<5){const b=buildingAtPointer(event);if(b){inspect(b.type,b.id);status(`${toolName(b.type)} · Column ${b.x+1}, Row ${b.y+1}. Use Focus for a closer look.`);}}
+ if(event.button===0&&mode==='pan'&&inspectionClick&&Math.hypot(event.clientX-inspectionClick.x,event.clientY-inspectionClick.y)<5){const b=buildingAtPointer(event);if(b){inspect(b.type,b.id);status(`${toolName(b.type)} · Column ${b.x+1}, Row ${b.y+1}. Use Focus for a closer look.`);}}
  inspectionClick=null;
 },true);
 canvas.addEventListener('pointercancel',finishInteraction,true);canvas.addEventListener('lostpointercapture',finishInteraction,true);
 canvas.addEventListener('pointerleave',()=>{if(!active){hover=null;updateHighlight();}});
 canvas.addEventListener('contextmenu',event=>event.preventDefault());canvas.addEventListener('dragstart',event=>event.preventDefault());
+// Prevent the browser's middle-button autoscroll and auxiliary-click defaults.
+for(const type of ['mousedown','auxclick'])canvas.addEventListener(type,event=>{if(event.button===1)event.preventDefault();});
 window.addEventListener('pointerup',finishInteraction,true);window.addEventListener('blur',()=>{finishInteraction();inspectionClick=null;});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){finishInteraction();inspectionClick=null;}});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){finishInteraction();movingId=null;hover=null;updateHighlight();if(!$('modal').open)status('Placement ended. Your village remains saved.');}if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='z'&&!['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)){event.preventDefault();event.shiftKey?redoAction():undoAction();}});
@@ -134,8 +168,8 @@ function confirmNew(prepared){showModal(prepared?'Open Prepared Round 1?':'Start
 $('saveButton').onclick=()=>{showModal('Save & Open Your Review',`<p class="notice">This review uses its own browser save. It does not read or overwrite your accepted 2D village.</p><div class="actions"><button id="downloadReview" class="primary">Download Review Save</button><button id="openReview">Open Review Save</button></div><h3>Choose A Starting Point</h3><p>The prepared village meets every original setup requirement. Its layout is a review fixture, not a required classroom arrangement.</p><button id="preparedReview">Open Prepared Round 1</button><button id="blankReview">Start Blank Setup</button>`);$('downloadReview').onclick=downloadSave;$('openReview').onclick=()=>$('saveFile').click();$('preparedReview').onclick=()=>confirmNew(true);$('blankReview').onclick=()=>confirmNew(false);};
 $('saveFile').onchange=async event=>{const file=event.target.files[0];event.target.value='';if(!file)return;try{if(file.size>8*1024*1024)throw Error('That save is too large.');const candidate=validateReview(JSON.parse(await file.text()));showModal('Open This Saved Review?',`<p>Open <strong>${escape(candidate.state.name||'Unnamed Village')}</strong> at ${candidate.state.round?'Round 1':'Setup'}?</p><div class="actions"><button id="backupCurrent">Download Current Save</button><button id="confirmOpen" class="primary">Open Village</button></div>`);$('backupCurrent').onclick=downloadSave;$('confirmOpen').onclick=()=>{review=candidate;undo=[];redo=[];movingId=null;selected='inspect';setMode('pan');persist();renderAll();closeModal();status('Saved review opened.');};}catch(e){status(e.message,true);showModal('Could Not Open Save',`<p>${escape(e.message)}</p><p>Your current review has been kept.</p>`);}};
 function showComplete(){status('Round 1 complete. Explore your village and download a review save.');showModal('Round 1 Complete',`<p class="notice">Your canal connects to the coal mine, you have acknowledged its proximity to the river, and your nice house is built.</p><p>This completes the one-round 3D review. Explore the town, compare the original artwork, and save your work. Later rounds remain outside this prototype.</p><div class="actions"><button id="saveComplete" class="primary">Download Review Save</button><button id="exploreComplete">Explore Your Village</button></div>`);$('saveComplete').onclick=downloadSave;$('exploreComplete').onclick=closeModal;}
-$('guideButton').onclick=()=>showModal('Explore, Build, And Review',`<h3>Camera Controls</h3><ul><li><strong>Pan & Inspect:</strong> drag empty ground to move the view; click a building to inspect it.</li><li><strong>Rotate:</strong> drag to turn and tilt the town. Right-drag also rotates while building.</li><li><strong>Zoom:</strong> use the wheel or + / −. Select <strong>Focus</strong> to examine a building closely.</li><li><strong>Overhead:</strong> a north-up, rotation-locked view for reliable square placement. <strong>Frame Village</strong> restores the whole board.</li><li>Collapse either floating panel using its title. On touch screens, select Pan before navigating and use two fingers to pan or zoom.</li></ul><h3>Building</h3><p>Choose a tile, then click its upper-left grid square. Drag for a continuous canal, river, or road. Move uses two clicks. Escape ends a placement gesture or cancels a move. Undo and Redo keep your changes reversible.</p><h3>Original Source Notes</h3><p>The full World History deck supplies the sequence. Setup uses slides 2 and 6; Round 1 uses slide 9. Original wording is available in the Chronicle. “Near the river” has no numeric distance in the source, so the original acknowledgement remains part of the checklist.</p><p>The original 29 × 32 grid and one-square / 2 × 2 footprints remain unchanged. Models are clearly distinct placeholders; original illustrations are preserved at larger viewing sizes. This review adds no money, scoring, or historical events.</p>`);
+$('guideButton').onclick=()=>showModal('Explore, Build, And Review',`<h3>Camera Controls</h3><ul><li><strong>Pan & Inspect:</strong> drag empty ground to move the view; click a building to inspect it.</li><li><strong>Rotate:</strong> drag to turn and tilt the town. Right-drag also rotates while building. Hold the middle mouse button and drag horizontally to orbit without switching tools.</li><li><strong>Zoom:</strong> use the wheel or + / −. Select <strong>Focus</strong> to examine a building closely.</li><li><strong>Overhead:</strong> a north-up, rotation-locked view for reliable square placement. <strong>Frame Village</strong> restores the whole board.</li><li>Collapse either floating panel using its title. On touch screens, select Pan before navigating and use two fingers to pan or zoom.</li></ul><h3>Building</h3><p>Choose a tile, then click its upper-left grid square. Drag for a continuous canal, river, or road. Move uses two clicks. Escape ends a placement gesture or cancels a move. Undo and Redo keep your changes reversible.</p><h3>Original Source Notes</h3><p>The full World History deck supplies the sequence. Setup uses slides 2 and 6; Round 1 uses slide 9. Original wording is available in the Chronicle. “Near the river” has no numeric distance in the source, so the original acknowledgement remains part of the checklist.</p><p>The original 29 × 32 grid and one-square / 2 × 2 footprints remain unchanged. The 3D models are clearly distinct placeholders. The original 2D illustrations are permanent artwork, preserved at larger viewing sizes. This review adds no money, scoring, or historical events.</p>`);
 window.addEventListener('beforeunload',()=>{finishInteraction();if(!loadNotice)persist();});
 try{const manifest=await (await fetch('build-manifest.json')).json();$('buildIdentity').textContent=manifest.identifier;globalThis.URBAN_REVIEW_BUILD=manifest;}catch(e){$('buildIdentity').textContent='1.0.0 River & Hearth · Local Development Session';}
 renderAll();if(innerWidth<720){$('journalToggle').click();$('toolsToggle').click();}if(loadNotice)status(loadNotice,true);else status(review.roundOneComplete?'Round 1 complete. Explore your saved village.':state().round===0?'Continue your setup using the original checklist.':'Round 1 is ready. Build the canal and your nice house.');
-globalThis.__URBAN_REVIEW__={read:()=>R.clone(review),interaction:()=>({activePointer:active?.id??null,mode,selected,movingId}),camera:()=>({zoom:camera.zoom,position:camera.position.toArray(),target:controls.target.toArray(),viewMode,azimuth:controls.getAzimuthalAngle(),polar:controls.getPolarAngle()}),cellToScreen:(x,y)=>{const [wx,wz]=world(x,y),v=new T.Vector3(wx,.03,wz).project(camera);return {x:(v.x+1)/2*innerWidth,y:(1-v.y)/2*innerHeight};}};
+globalThis.__URBAN_REVIEW__={read:()=>R.clone(review),interaction:()=>({activePointer:active?.id??null,navigationPointers:[...navigationPointers.keys()],mode,selected,movingId}),camera:()=>({zoom:camera.zoom,position:camera.position.toArray(),target:controls.target.toArray(),viewMode,azimuth:controls.getAzimuthalAngle(),polar:controls.getPolarAngle()}),cellToScreen:(x,y)=>{const [wx,wz]=world(x,y),v=new T.Vector3(wx,.03,wz).project(camera);return {x:(v.x+1)/2*innerWidth,y:(1-v.y)/2*innerHeight};}};

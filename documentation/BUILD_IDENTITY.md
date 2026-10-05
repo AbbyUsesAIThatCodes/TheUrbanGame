@@ -42,7 +42,7 @@ The accepted deployed build above remains unchanged. The separate review target 
 | Versioned distribution | `prototype-3d/.builds/<full-ID>/` |
 | Stable local preview | `prototype-3d/dist/`; `npm run serve` |
 | Manifest | `dist/build-manifest.json` and embedded `#review-build-manifest` |
-| Visible full ID | `dist/index.html`, `#buildIdentity` footer |
+| Visible full ID | `dist/index.html`, `#buildIdentity` in the upper-left title banner; wraps and can be copied |
 | Current report and payload hashes | `prototype-3d/current-build.json` |
 | Test evidence | `prototype-3d/VALIDATION.md`, ignored `test-output/browser-results.json` |
 | Contributor instructions | `AGENTS.md`, `prototype-3d/README.md` |

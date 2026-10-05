@@ -6,5 +6,6 @@
 - Read [Round Fidelity Audit](documentation/ROUND_FIDELITY_AUDIT.md), [Prototype Review](prototype-3d/README.md), and [Build Identity](documentation/BUILD_IDENTITY.md) before changing game behavior or build outputs.
 - Keep the preserved rules script byte-identical. Any proposed rule change must identify its original source and explicit ambiguity instead of silently altering the baseline.
 - Use the prototype's separate browser storage key. Do not inspect, clear, reset, or overwrite the owner's live Vivaldi village or accepted 2D save.
+- Keep the original 2D illustrations as permanent panel artwork. Only the geometric 3D models are placeholders. The approved build 006 is preserved on `review/3d-build-006` and in its immutable local distribution.
 - Run the focused rule tests and browser interaction checks for relevant changes. Reuse the same built artifact for review; do not rebuild solely to update a commit label.
 - No outreach, billing changes, Actions artifact cleanup, credentials, or self-hosted runners are authorized by this local review.

@@ -1,6 +1,6 @@
 {
   "scope": "local-3d-round-1",
-  "next_ordinal": 7,
+  "next_ordinal": 9,
   "attempts": [
     {
       "ordinal": 1,
@@ -30,6 +30,16 @@
     {
       "ordinal": 6,
       "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-006_20261004T223540Z_ged367a7a6138_dirty-664562612c38_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 7,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-007_20261004T235114Z_g5965d80a4687_dirty-1453707c14a4_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 8,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-008_20261004T235623Z_g5965d80a4687_dirty-811f5b412d7d_3d-review",
       "status": "succeeded"
     }
   ]

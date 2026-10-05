@@ -7,7 +7,8 @@ index=(ROOT/'dist/index.html').read_text(encoding='utf-8')
 embedded=json.loads(re.search(r'<script type="application/json" id="review-build-manifest">(.*?)</script>',index,re.S).group(1))
 assert embedded==manifest
 assert current['identifier']==manifest['identifier']
-assert f'<footer id="buildIdentity">{manifest["identifier"]}</footer>' in index
+assert f'<p id="buildIdentity">{manifest["identifier"]}</p>' in index
+assert '<footer' not in index
 for name,digest in current['payload_sha256'].items():
     data=(ROOT/'dist'/name).read_bytes()
     assert hashlib.sha256(data).hexdigest()==digest,name
