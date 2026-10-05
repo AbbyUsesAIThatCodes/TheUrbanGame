@@ -1,0 +1,28 @@
+{
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review",
+  "source_revision": "62903917e492f31ce81214bd04367dd0ad4fefe1",
+  "source_dirty": false,
+  "source_fingerprint_sha256": "fe4b6b859f57cd353b901afd9b672e4efbf50facc11bf220ffce2e27a4792138",
+  "unit_tests_passed": 43,
+  "full_browser_groups_passed": 23,
+  "late_action_groups_passed": 4,
+  "script_errors": 0,
+  "asset_failures": 0,
+  "navigation_cancellations": 0,
+  "payload_files_verified": 50,
+  "earlier_build_evidence": {
+    "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-017_20261005T021504Z_g9f236629e674_dirty-fe4b6b859f57_3d-review",
+    "checks": {
+      "browser-results.json": 19,
+      "camera-results.json": 8,
+      "placement-regression-results.json": 11,
+      "model-visuals-results.json": 2
+    },
+    "applicability": "Exact same runtime source fingerprint; these focused suites ran on Build017, not Build018."
+  },
+  "limitations": [
+    "Headless Chromium with software WebGL only",
+    "No physical touch device testing",
+    "Other browser engines and classroom hardware performance unverified"
+  ]
+}

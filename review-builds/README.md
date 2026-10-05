@@ -4,7 +4,7 @@ These static review distributions are stored on the review branch for backup. Th
 
 - Build015: full original game, before model refinements; complete walkthrough verified.
 - Build017: artwork-inspired model checkpoint; validation status is recorded in the review documentation.
-- Build018: fresh build from committed source 62903917e492, with runtime source inputs identical to Build017.
+- Build018: fresh build from committed source 62903917e492, with runtime source inputs identical to Build017. All43 unit tests, 23 full-game browser groups and four late-action groups passed; see [Validation](../prototype-3d/VALIDATION.md).
 
 ## Downloads
 

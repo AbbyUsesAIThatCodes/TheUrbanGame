@@ -40,3 +40,17 @@ All43 unit/source/model/save tests passed. Build verification passed49 payloads;
 Build014 exposed a theater column extending0.0085 grid units past its footprint; Build015 fixes it. A cross-context test comparison was normalized correctly. The earlier fast-navigation browser run also recorded one unfinished image request; the complete rerun waits for image decoding, verifies all asset hashes, and records navigation cancellations separately. It passed with 0 cancelled requests and no script or asset failures. Build014 remains identifiable but is not the validated review.
 
 The complete-game artifact and its QA evidence were preserved before any artwork-inspired model refinements.
+
+## Build017 - Artwork-Inspired Models
+
+After Build015 completed the full original game walkthrough, the permanent atlas was inspected and the cottage, manor and water/steam factory models were refined. Geometry stays within the original footprints; controls, rules, saved game fields and classroom content are unchanged. Four focused views and rotations plus a full 196-building city passed the visual/state checks. All43 unit tests, 19 early-gameplay groups, eight camera groups, 11 placement groups and two model-view groups passed. The exact artifact is retained in [Review Downloads](../review-builds/README.md), with [Build017 Evidence](validation/build-017/).
+
+## Build018 - Clean Source And Remote Preservation
+
+Canonical identity: `1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review`.
+
+Built from clean source `62903917e492f31ce81214bd04367dd0ad4fefe1`, with runtime source inputs byte-identical to Build017. The source was uploaded before remaining regression checks, with pending checks labeled honestly. Builds015/017/018 were then archived and their remote Git blob identities verified at `fe717b8dd16b7cb6218e440cd4e8cbf1664e372a`.
+
+The remaining checks are complete: 43 unit tests, 23 full-browser groups through all20 rounds and final reflections, and four late-action groups passed on Build018. All50 payload hashes match; there were no script errors, asset failures or navigation cancellations. Original sources, accepted controls and immutable prior builds remain unchanged. See [Current Validation](../prototype-3d/VALIDATION.md) and [Build018 Evidence](validation/build-018/).
+
+Only review branches were uploaded. Main and Pages remain at `5059061dea9c106de5f70d25a6e238629ac76217`; the prototype was not merged or deployed. These headless Chromium checks do not establish physical touch, other browser engines or classroom-hardware performance.

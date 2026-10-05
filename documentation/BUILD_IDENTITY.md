@@ -31,9 +31,9 @@ The canonical ID is `<version>_<codename-slug>_main_build-<ordinal>_<UTC>_g<revi
 
 Two sequential real builds were checked for different ordinals and IDs. Reusing the second payload preserves its ID. The lock's rejection path is checked without reserving an artifact. Hosted manifests, console IDs, output directory, footer, and current report are compared end to end. Future PR-producing builds must allocate a new PR-scoped identity; do not relabel existing artifacts.
 
-## Separate Local 3D Review
+## Separate 3D Review
 
-The accepted deployed 1.0.0 River & Hearth build above remains unchanged. The owner-approved next local milestone is **1.1.0 A Town Takes Shape**, status `local-prototype`, target `3d-review`, playable setup through Round 20 with original closing reflections. It is not a published release. The authoritative release record is `prototype-3d/release.json`; package metadata mirrors its version.
+The accepted deployed 1.0.0 River & Hearth build above remains unchanged. The owner-approved review milestone is **1.1.0 A Town Takes Shape**, status `local-prototype`, target `3d-review`, playable setup through Round 20 with original closing reflections. It is not a published release. The authoritative release record is `prototype-3d/release.json`; package metadata mirrors its version.
 
 The existing durable ledger continues without resetting ordinals. From the 1.1.0 milestone onward, its stable scope is `local-3d-review`; earlier `local-3d-round-1` artifacts and their identifiers remain unchanged. No PR number is invented. The latest identity is authoritative in `prototype-3d/current-build.json`; a later local check-in may record the same tested dirty-input artifact without rebuilding it.
 
@@ -50,10 +50,12 @@ The owner explicitly replaced the persistent full identifier with the compact **
 | Compact visible label | `dist/index.html`, `#buildIdentity` in the upper-left title banner |
 | Full identity in UI | Guide → About This Build, `#buildDetails` |
 | Current report and payload hashes | `prototype-3d/current-build.json` |
-| Test evidence | `prototype-3d/VALIDATION.md`; ignored browser/camera result files |
+| Test evidence | `prototype-3d/VALIDATION.md`; tracked `documentation/validation/build-017/` and `build-018/` reports |
 | Earlier accepted reviews | Builds 006, 008 and 011 immutable distributions, local baseline branches, and sibling QA evidence folders |
 | Contributor instructions | `AGENTS.md`, `prototype-3d/README.md` |
-| CI / PR / remote deployment | Inapplicable to this local-only review; no PR or deployment created |
+| Remote source backup | `review/3d-full-game`; preserved Build015 and Build017 checkpoint branches |
+| Downloadable review builds | `review-builds/`; original ZIP identities and SHA-256 in `checksums.json` |
+| CI / PR / remote deployment | Review branches uploaded with owner authorization; no PR, merge or prototype deployment |
 
 The core original game state stays at save version 1. The current review wrapper uses version 3, imports earlier version-1 and version-2 review saves, and stores them under a separate browser key without changing either earlier value. The wrapper records its review limit so completed earlier milestones can continue normally. Earlier artifacts and their earlier saves remain available.
 

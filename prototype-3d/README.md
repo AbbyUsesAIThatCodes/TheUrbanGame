@@ -32,7 +32,7 @@ The version 3 review wrapper imports version 1 Round 1 and version 2 Round 5 rev
 
 The current browser key is `nch-urban-game-3d-full-review-v3`. If absent, the app copies a valid save first from `nch-urban-game-3d-round5-review-v2`, then from `nch-urban-game-3d-round1-review-v1`. Both earlier values remain untouched. The accepted 2D key `nch-urban-game-v1` is never read or written.
 
-Builds 006, 008, 011 and the complete-game Build015 remain in immutable distributions, local baseline branches, and sibling QA folders. Work continues on `review/3d-full-game`. The owner authorized review-branch uploads for preservation. Merging into main and deploying the prototype remain outside this task.
+Builds 006, 008, 011 and the complete-game Build015 remain in immutable distributions, local baseline branches, and sibling QA folders. Work continues on `review/3d-full-game`. The owner authorized review-branch uploads for preservation. Current source and immutable Builds015/017/018 are uploaded; see [Review Downloads](../review-builds/README.md). Merging into main and deploying the prototype remain outside this task.
 
 ## Validation
 
@@ -43,6 +43,8 @@ npm test
 npm run test:browser
 npm run test:camera
 node tests/placement-regression.cjs
+node tests/late-actions.cjs
+node tests/model-visuals.cjs
 $env:START_ROUND='1'
 npm run test:full-browser
 python tests/verify_build.py

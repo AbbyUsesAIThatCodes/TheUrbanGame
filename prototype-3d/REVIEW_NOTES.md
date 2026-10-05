@@ -1,6 +1,6 @@
 # A Town Takes Shape — Full Local Review Notes
 
-The owner authorized completing all original Urban Game rounds, then improving a few 3D models against the permanent 2D illustrations. The current branch is `review/3d-full-game`. No prototype has been pushed or deployed.
+The owner authorized completing all original Urban Game rounds, then improving a few 3D models against the permanent 2D illustrations. The current branch is `review/3d-full-game`. The owner authorized review-branch backup; current source and Builds015/017/018 are now preserved on GitHub. The prototype has not been merged or deployed.
 
 ## Original Rounds And Closing
 
