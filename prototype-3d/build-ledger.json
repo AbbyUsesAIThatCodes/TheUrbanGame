@@ -1,6 +1,6 @@
 {
   "scope": "local-3d-review",
-  "next_ordinal": 18,
+  "next_ordinal": 19,
   "attempts": [
     {
       "ordinal": 1,
@@ -85,6 +85,11 @@
     {
       "ordinal": 17,
       "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-017_20261005T021504Z_g9f236629e674_dirty-fe4b6b859f57_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 18,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review",
       "status": "succeeded"
     }
   ]
