@@ -2,7 +2,7 @@
 
 ## Scope And Authority
 
-This audit uses the exact two PowerPoints, board PDF, and recovered HTML in `originals/`. The full World History deck governs setup and Rounds 1–20; the second deck provides alternate original wording through Round 10. The board governs footprints and provides one version of the reflection questions. The 3D review milestone covers setup and Round 1 only. No historical wording is corrected and no economic simulation, scoring, or extra events are introduced.
+This audit uses the exact two PowerPoints, board PDF, and recovered HTML in `originals/`. The full World History deck governs setup and Rounds 1–20; the second deck provides alternate original wording through Round 10. The board governs footprints and provides one version of the reflection questions. The approved 1.1.0 A Town Takes Shape local milestone covers setup and Rounds 1–5. The focused extension audit is in [Rounds 2–5 Review](ROUNDS_2_TO_5_REVIEW.md). No historical wording is corrected and no economic simulation, scoring, or extra events are introduced.
 
 All **53 slide texts** in the recovered HTML were compared with the original PowerPoint DrawingML text. All match when whitespace is ignored. The extracted rules script is byte-identical to the original HTML script, SHA-256 `3ead711e66c2e84af5bfffa65365d8d850fc7070204da95d9aa0ef63576da0d9`. Machine-readable evidence is in `prototype-3d/source-provenance.json`. This is fidelity to the supplied classroom source, not independent verification of its historical claims.
 
@@ -56,8 +56,10 @@ The inherited rule definitions match these numeric additions and the five-house 
 
 ## Reflection Wording
 
-The board asks about the impacts of **industrialization** on the village and its **citizens** over time. The full deck's final slide asks about **urbanization** and its **people**. Both then ask what influenced or caused the changes and what issues remain at the end. Keep these two source wordings selectable in the eventual full game; do not collapse them into a newly authored question. Final reflections are outside this one-round prototype's completion milestone.
+The board asks about the impacts of **industrialization** on the village and its **citizens** over time. The full deck's final slide asks about **urbanization** and its **people**. Both then ask what influenced or caused the changes and what issues remain at the end. Keep these two source wordings selectable in the eventual full game; do not collapse them into a newly authored question. Final reflections are outside this five-round prototype's completion milestone.
 
-## One-Round Acceptance
+## Original Round 1 Milestone
+
+The following describes the preserved, accepted builds 006 and 008. The current approved milestone extends normal progression through Round 5, as specified in the focused extension audit.
 
 Setup must be valid under the original rules before Round 1 begins. Round 1 must block completion until the player places exactly one 2 × 2 nice house on valid land, draws a continuous one-square canal touching the mine, and acknowledges the qualitative river proximity requirement. Completing it ends the local review milestone; it must not expose or implement Rounds 2–20. The prepared review village is a clearly labelled valid setup fixture, not extra source content. Original artwork must be available at a useful viewing size independently of the 3D placeholders.

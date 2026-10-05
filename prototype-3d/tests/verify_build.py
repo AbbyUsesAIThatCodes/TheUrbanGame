@@ -1,5 +1,5 @@
 from pathlib import Path
-import hashlib,json,os,re,subprocess
+import hashlib,json,os,re,subprocess,html
 ROOT=Path(__file__).resolve().parents[1]
 current=json.loads((ROOT/'current-build.json').read_text())
 manifest=json.loads((ROOT/'dist/build-manifest.json').read_text())
@@ -7,7 +7,12 @@ index=(ROOT/'dist/index.html').read_text(encoding='utf-8')
 embedded=json.loads(re.search(r'<script type="application/json" id="review-build-manifest">(.*?)</script>',index,re.S).group(1))
 assert embedded==manifest
 assert current['identifier']==manifest['identifier']
-assert f'<p id="buildIdentity">{manifest["identifier"]}</p>' in index
+release=json.loads((ROOT/'release.json').read_text())
+assert all(manifest[k]==release[k] for k in ['version','codename','codename_slug','release_status'])
+assert json.loads((ROOT/'package.json').read_text())['version']==release['version']
+assert manifest['playable_scope']==['setup',*[f'round-{n}' for n in range(1,release['last_round']+1)]]
+assert manifest['display_label']==f"{manifest['version']} {manifest['codename']} Build{manifest['ordinal']:03d}"
+assert f'<p id="buildIdentity">{html.escape(manifest["display_label"])}</p>' in index
 assert '<footer' not in index
 for name,digest in current['payload_sha256'].items():
     data=(ROOT/'dist'/name).read_bytes()

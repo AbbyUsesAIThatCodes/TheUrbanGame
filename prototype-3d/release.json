@@ -1,0 +1,8 @@
+{
+  "version": "1.1.0",
+  "codename": "A Town Takes Shape",
+  "codename_slug": "A-Town-Takes-Shape",
+  "release_status": "local-prototype",
+  "last_round": 5,
+  "compatibility": "Imports earlier version-1 setup and Round 1 review saves into a version-2 wrapper and separate storage key, preserving all original game data."
+}

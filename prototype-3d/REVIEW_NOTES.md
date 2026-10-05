@@ -1,23 +1,23 @@
-# Camera And Header Review
+# A Town Takes Shape — Local Review Notes
 
-This local iteration follows the owner's successful playthrough of build 006. It changes camera input and the header only. Setup, Round 1, save fields, storage keys, source wording, models, and original artwork remain unchanged. The original 2D illustrations are permanent panel artwork; the 3D geometry is still the approved placeholder set.
+The owner approved **1.1.0 A Town Takes Shape** and faithful Rounds 2–5 after accepting build 008's camera controls and layout. This review keeps those controls, the original illustrations, existing models, setup, and Round 1. It adds only the remaining actions and presentation required through Round 5.
 
-## Camera Changes
+## New Playable Rounds
 
-The previous panning configuration projected the vertical drag onto the ground plane without compensating for foreshortening. Its visible vertical movement therefore varied with camera tilt. A pan speed of 0.8 and damping also made movement slower and continue after release.
+Round 2 grows the village to 15 houses. Round 3 opens the commons, grows it to 20 houses, and places the new nice house within the former commons. Round 4 adds a river-powered factory and reaches 25 houses. Round 5 adds workers' homes and services, reaching 40 houses, with optional roads and one additional bridge crossing. A second crossing blocks completion until corrected.
 
-The current orthographic controls use camera-relative screen axes, unit pan speed, and direct response. A world point follows the drag by the same pixel distance on either screen axis, away from the travel boundary. After each movement, the orbit pivot is projected along the view direction back onto the board's ground plane. This does not change the orthographic screen image; it keeps subsequent rotation and extreme low-angle panning above the board. The existing 35-unit navigation boundary and Frame Village reset remain available.
+Both decks' original narratives remain unchanged and selectable. The factory's brick mill and wooden wheel fit its original four-square footprint; no steam-era smoke is added. The commons fence disappears when building opens there, while the former area remains shaded. No economy, scoring, new historical events, or intermediate reflection prompts are introduced. See the [Focused Audit](../documentation/ROUNDS_2_TO_5_REVIEW.md) for inherited interpretations and the exact source requirements.
 
-Holding the middle mouse button and dragging horizontally now orbits without switching tools or placing buildings. Rotate mode and right-drag remain available, and wheel zoom is unchanged. Overhead remains north-up and rotation-locked. The canvas suppresses the browser's middle-button autoscroll and auxiliary-click defaults.
+Placing the first factory exposed an inspector refresh issue: Focus stayed disabled until selection changed. Successful placement now refreshes the inspector immediately, so a new building can be examined at once.
 
-Navigation tracks its own active pointers. Normal releases remain with OrbitControls so its touch transition is preserved. Cancellation, lost capture, focus loss, Escape, and missing mouse buttons clear an interrupted gesture through the controls' public disconnect/connect lifecycle. Placement remains a separate transaction.
+## Accepted Controls And Compact Label
 
-## Header Changes
+Build 008's screen-relative pan, middle-button orbit, low-angle camera boundary, cancellation recovery, wheel zoom, overhead view, floating panels, and split header remain in place. Original 2D illustrations are permanent panel artwork; 3D geometry remains deliberately simple.
 
-The title and full current build identifier occupy an upper-left banner. Year, round, Save & Open, and Guide occupy a separate upper-right panel. Both panels allow the board to remain visible between them. The build identifier wraps and can be copied. The bottom version bar is removed, and camera controls and status use the recovered space. Floating panels position themselves below the header as its height changes.
+The header now uses the owner's compact `version codename BuildNNN` format. The actual approved version and codename are used; format examples were not treated as release changes. Guide's About This Build section and the manifest retain the full canonical identifier, fixed UTC build time, and complete source revision.
 
-## Preserved Baseline
+## Save Compatibility And Boundaries
 
-Build 006 is preserved in its immutable `.builds/` directory. Local branch `review/3d-build-006` points to `5965d80a4687893d77675f0efee0028e9a1926ab`; its original evidence is preserved in the sibling workspace folder `qa-3d-build-006`. A generated build 006 review save is retained as a compatibility fixture in `tests/fixtures/`.
+Earlier version-1 review saves migrate to a version-2 wrapper and a separate browser key without overwriting the original. Completed Round 1 villages can begin Round 2 normally. Incomplete progress remains in its original round. The review stops at Round 5; it does not mark the full 20-round game finished or permit Round 6 imports.
 
-The latest exact identity and payload checksums are in [Current Build](current-build.json). [Validation](VALIDATION.md) records the tests and their limits. No prototype changes have been pushed or deployed; accepted Pages remains at `5059061dea9c106de5f70d25a6e238629ac76217`.
+Builds 006 and 008, source branches, and their original QA evidence remain preserved. The latest exact identity is in [Current Build](current-build.json), with results in [Validation](VALIDATION.md). No 3D content has been pushed or deployed. Accepted Pages remains at `5059061dea9c106de5f70d25a6e238629ac76217`, and the private Site is unchanged.

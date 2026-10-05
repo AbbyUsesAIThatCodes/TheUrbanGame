@@ -64,13 +64,15 @@ const pass=(name)=>{results.checks.push(name);console.log('PASS '+name);};
   for(const width of [1600,1000,720,390]){
    await page.setViewportSize({width,height:width===390?844:1000});await page.waitForTimeout(120);
    const bounds=await page.evaluate(()=>{const box=s=>{const r=document.querySelector(s).getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height};};return {brand:box('.brand'),session:box('.session-panel'),identity:box('#buildIdentity'),panel:box('#journalPanel'),footer:document.querySelector('footer')!==null,identityText:document.querySelector('#buildIdentity').textContent,phaseVisible:getComputedStyle(document.querySelector('.era')).display!=='none',overflow:document.documentElement.scrollWidth>innerWidth};});
-   assert.equal(bounds.footer,false);assert.equal(bounds.identityText,current.identifier);assert(bounds.brand.right+6<=bounds.session.x);assert(bounds.session.right<=width);assert(bounds.identity.bottom<=bounds.brand.bottom);assert(bounds.panel.y>Math.max(bounds.brand.bottom,bounds.session.bottom));assert(bounds.phaseVisible);assert(!bounds.overflow);
+   assert.equal(bounds.footer,false);assert.equal(bounds.identityText,await page.evaluate(()=>URBAN_REVIEW_BUILD.display_label));assert(bounds.brand.right+6<=bounds.session.x);assert(bounds.session.right<=width);assert(bounds.identity.bottom<=bounds.brand.bottom);assert(bounds.panel.y>Math.max(bounds.brand.bottom,bounds.session.bottom));assert(bounds.phaseVisible);assert(!bounds.overflow);
    await page.screenshot({path:path.join(out,'header-'+width+'.png')});
   }
-  pass('Split header shows the full current ID, year, round, and actions without a footer or overlaps at 1600, 1000, 720, and 390 pixels');
+  await page.locator('#guideButton').click();const m=await page.evaluate(()=>URBAN_REVIEW_BUILD),details=await page.locator('#buildDetails').innerText();for(const value of [m.identifier,m.build_time_utc,m.source_revision])assert(details.includes(value));await page.locator('#buildDetails').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,'about-build.png')});await page.locator('#closeModal').click();
+  pass('Split header shows the compact label, year, round, and actions without a footer or overlaps at 1600, 1000, 720, and 390 pixels');
   const baselineSave=path.join(__dirname,'fixtures/build-006-round-1-review.json');
-  await page.locator('#saveFile').setInputFiles(baselineSave);await page.locator('#confirmOpen').click();assert((await read()).roundOneComplete);assert.equal((await read()).state.round,1);
-  pass('A build 006 review save opens unchanged in the new build');
+  await page.locator('#saveFile').setInputFiles(baselineSave);await page.locator('#confirmOpen').click();assert.equal((await read()).reviewComplete,false);assert.equal((await read()).version,2);assert.equal((await read()).state.round,1);
+  if(await page.locator('#journalToggle').getAttribute('aria-expanded')==='false')await page.locator('#journalToggle').click();await page.locator('#nextButton').click();assert.equal((await read()).state.round,2);
+  pass('A build 006 review save migrates without losing progress and can continue into Round 2');
   assert.deepEqual(results.errors,[]);pass('No JavaScript errors during camera or header checks');results.status='passed';
  }catch(e){results.status='failed';results.failure=e.stack;throw e;}
  finally{fs.writeFileSync(path.join(out,'camera-results.json'),JSON.stringify(results,null,2));await browser.close();}

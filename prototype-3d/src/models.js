@@ -28,6 +28,12 @@ export function buildingModel(type){
    box(g,1.88,.1,1.88,'#89a568');for(const x of [-.68,.68])for(const z of [-.68,.68])tree(g,x,z,.75);box(g,.23,.035,1.84,'#d3c296',0,.071);box(g,1.84,.035,.23,'#d3c296',0,.073);box(g,.6,.12,.18,'#9c794d',.43,.2,.42);box(g,.6,.25,.05,'#9c794d',.43,.32,.51);
  }else if(type==='manor'){
    box(g,1.48,1.03,1.22,'#e5d6b1');roof(g,1.65,1.4,.52,1.03,'#59726c');box(g,.73,.82,.43,'#e9dfc2',0,.41,.7);roof(g,.89,.57,.28,.82,'#59726c').position.z=.7;door(g,0,.26,.928,.24,.52);windows(g,[-.5,.5],.44,.625);windows(g,[-.5,-.17,.17,.5],.81,.625);for(const x of [-.61,.61])box(g,.16,.47,.17,'#9b8e76',x,1.42,-.28);box(g,.68,.1,.22,'#bfb394',0,.05,.88);
+ }else if(type==='factory'){
+   // A water-powered mill: brick hall and wooden wheel, without later steam-era smoke.
+   box(g,1.85,.1,1.85,'#a89b81');box(g,1.3,1.02,1.38,'#b98163');roof(g,1.48,1.56,.35,1.07,'#686b5b');
+   windows(g,[-.43,-.14,.14,.43],.4,.704);windows(g,[-.43,-.14,.14,.43],.8,.704);door(g,0,.22,.72,.2,.36);
+   const wheel=mesh(g,new T.TorusGeometry(.3,.05,6,12),'#74573b',-.84,.45,0);wheel.rotation.y=Math.PI/2;
+   box(g,.06,.64,.055,'#9a7950',-.84,.45,0);box(g,.06,.055,.64,'#9a7950',-.84,.45,0);
  }else if(type==='trees'){tree(g,0,0,.85);}
  else {box(g,.8,.8,.8,'#baab86');roof(g,.9,.9,.32,.8,'#738072');}
  return g;

@@ -33,19 +33,28 @@ Two sequential real builds were checked for different ordinals and IDs. Reusing 
 
 ## Separate Local 3D Review
 
-The accepted deployed build above remains unchanged. The separate review target is **1.0.0 River & Hearth**, status `local-prototype`, target `3d-review`, scope `local-3d-round-1`. It is not a published release or a retrofit of the accepted Pages artifact. Its latest review identity is authoritative in `prototype-3d/current-build.json`; its source commit may differ from the local commit that later records generated metadata. Dirty inputs are explicitly fingerprinted and labelled.
+The accepted deployed 1.0.0 River & Hearth build above remains unchanged. The owner-approved next local milestone is **1.1.0 A Town Takes Shape**, status `local-prototype`, target `3d-review`, playable setup through Round 5. It is not a published release. The authoritative release record is `prototype-3d/release.json`; package metadata mirrors its version.
+
+The existing durable ledger continues without resetting ordinals. From the 1.1.0 milestone onward, its stable scope is `local-3d-review`; earlier `local-3d-round-1` artifacts and their identifiers remain unchanged. No PR number is invented. The latest identity is authoritative in `prototype-3d/current-build.json`; a later local check-in may record the same tested dirty-input artifact without rebuilding it.
+
+The owner explicitly replaced the persistent full identifier with the compact **version codename BuildNNN** header format. This later instruction supersedes the earlier display convention for this local review. The generated manifest's `display_label` drives the header. The complete canonical identifier, fixed UTC timestamp, full source revision, and dirty-input fingerprint remain available in the manifest; Guide's About This Build shows the full identifier, UTC time, and revision.
 
 | Review Surface | Location |
 | --- | --- |
-| Build entry point and console ID | `prototype-3d/build.py`; `npm run build` |
+| Release authority | `prototype-3d/release.json`; package version mirrors it |
+| Build entry point and full console ID | `prototype-3d/build.py`; `npm run build` |
 | Durable ordinal allocator | `prototype-3d/build-ledger.json`; exclusive `.build.lock` |
 | Versioned distribution | `prototype-3d/.builds/<full-ID>/` |
 | Stable local preview | `prototype-3d/dist/`; `npm run serve` |
-| Manifest | `dist/build-manifest.json` and embedded `#review-build-manifest` |
-| Visible full ID | `dist/index.html`, `#buildIdentity` in the upper-left title banner; wraps and can be copied |
+| Full manifest | `dist/build-manifest.json` and embedded `#review-build-manifest` |
+| Compact visible label | `dist/index.html`, `#buildIdentity` in the upper-left title banner |
+| Full identity in UI | Guide → About This Build, `#buildDetails` |
 | Current report and payload hashes | `prototype-3d/current-build.json` |
-| Test evidence | `prototype-3d/VALIDATION.md`, ignored `test-output/browser-results.json` |
+| Test evidence | `prototype-3d/VALIDATION.md`; ignored browser/camera result files |
+| Earlier accepted reviews | Build 006 and 008 immutable distributions, local baseline branches, and sibling QA evidence folders |
 | Contributor instructions | `AGENTS.md`, `prototype-3d/README.md` |
 | CI / PR / remote deployment | Inapplicable to this local-only review; no PR or deployment created |
 
-The build never writes to the repository's accepted `docs/` payload. Each build reserves its local ordinal before output; failed attempts keep their reservation. Retesting and reopening one distribution preserve its identity. No source timestamp is invented for the recovered original assets or rules.
+The core original game state stays at save version 1. The 1.1.0 review wrapper uses version 2, imports earlier version-1 review saves, and stores them under a separate browser key. This is a compatible import path; earlier artifacts and their earlier saves remain available.
+
+The build never writes to the repository's accepted `docs/` payload. It reserves an ordinal before output; failed attempts retain their reservation. Retesting and reopening an artifact preserve its identity. Full metadata and source fingerprints remain fixed at build time rather than being generated on page load. The focused consistency check compares the compact label to the authoritative fields and validates the full manifest, all payload hashes, source fingerprint, immutable distribution, and allocator lock.
