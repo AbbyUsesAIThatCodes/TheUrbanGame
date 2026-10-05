@@ -27,3 +27,16 @@ Added steam-era factory chimneys and exact original 4×4 smoke shading, wood/iro
 The 28 source/model/simulation tests passed. Headless Chromium completed every Round11–15 action, checked original text/images, blocked incomplete rounds, verified rendered smoke/iron/rail counts, and downloaded/reloaded/reopened each boundary save. It reported no script/network errors and preserved accepted 2D storage. Build verification passed all49 payload files and unchanged original/Pages baselines.
 
 The first browser run stopped at a test assertion: Playwright's disabled-state query did not report the disabled option. DOM inspection confirmed the native `disabled` attribute and property; the corrected property assertion passed. No gameplay change was needed for that test issue.
+
+
+## Build015 — Complete Original Game
+
+Canonical build: `1.1.0_A-Town-Takes-Shape_local-3d-review_build-015_20261005T020100Z_g70c9bf0269b4_dirty-b3056408f982_3d-review`.
+
+All20 rounds, final source conclusion, both original question sets, automatic answer saving and text export are implemented. The complete fresh headless walkthrough passed all23 groups, including a SHA-256 check of every served payload, normal placement and advancement through each round, every boundary save/reload/reopen, both railway layers, smoke and iron rendering, and final reflections. It finishes with196 structures,105 houses,22 factories,18 tenements, five demolished houses and21 snapshots, without teacher overrides. The machine-readable mapping is `ROUND_COVERAGE.json`.
+
+All43 unit/source/model/save tests passed. Build verification passed49 payloads; four originals,53 slide texts,33 restored source images, original artwork and the rule engine retain their source identities. Builds006/008/011 and accepted camera/pointer source blocks are unchanged.
+
+Build014 exposed a theater column extending0.0085 grid units past its footprint; Build015 fixes it. A cross-context test comparison was normalized correctly. The earlier browser run also recorded an image request interrupted while navigating; the complete rerun waits for image decoding, verifies all asset hashes, and records navigation cancellations separately. It passed with 0 cancelled requests and no script or asset failures. Build014 remains identifiable but is not the validated review.
+
+The complete-game artifact and its QA evidence were preserved before any artwork-inspired model refinements.
