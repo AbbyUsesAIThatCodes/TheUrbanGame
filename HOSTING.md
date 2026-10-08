@@ -1,17 +1,29 @@
 # GitHub Pages Hosting
 
-The Pages payload is the `docs/` folder on `main`. It contains the playable game, two extracted PNGs, the original portable download, build metadata, and a `.nojekyll` marker. The original PowerPoints and board PDF remain in `originals/`, outside the Pages payload.
+The owner authorized publishing **1.1.0 A Town Takes Shape Build019** on October 8, 2026. The site is https://abbyusesaithatcodes.github.io/TheUrbanGame/. GitHub Pages deploys `main:/docs` using its managed Pages workflow, with HTTPS enforced.
 
-`docs/Urban-Game.html` is a byte-for-byte copy of `originals/Urban-Game.html`, required by the existing **Download portable game** button. The hosted `docs/index.html` replaces exactly two embedded PNG data URLs with relative asset paths. Chromium rejected these multi-megabyte data URLs as CSS custom-property values, leaving the original toolbar artwork and banner blank; the extracted PNG bytes are identical to the embedded originals. A build manifest and visible footer identify this hosted artifact. Gameplay scripts, rules, historical wording, save format, storage keys, and artwork bytes are unchanged.
+## Exact Artifact Promotion
 
-The original source was preserved first in commit `e6da06846c3c4102163656ddbd799e1fe6df6316`. An independent fresh clone from GitHub verified all four original files by SHA-256, Git blob ID, file size, and direct byte comparison before the hosting files were created. The original repository README was retained unchanged.
+`docs/` contains the unchanged Build019 archive payload. All 50 checksummed files, the embedded manifest, compact title, UTC build time, source revision, and storage keys are identical to the reviewed artifact. Deployment does not allocate a new ordinal or relabel its original review status, scope, or target.
 
-The original and downloadable HTML SHA-256 is `708817d6ae8951fe0504bc2636ff87d2ca5bd47d164659bb41c8b1dbfae8dc25`. The hosted payload's hashes and exact build ID are in [Current Build](build/current.json). See [Original Source Preservation](preservation/README.md), [Build Identity](documentation/BUILD_IDENTITY.md), and [Validation](documentation/VALIDATION.md).
+- Build source: `b78f020777fa12a9b66334444cd781897c204cff`.
+- Source/archive/evidence checkpoint: `e371296120a6ef49475758083a28fa22e9526bfc`.
+- Archive SHA-256: `4da0424da7234da53cbf3cd1c057d134541ded6d91e33102eb48a0b2a6a8cd3c`.
+- Deployment identity and payload hashes: [Current Build](build/current.json).
+- Identity inventory: [Build Identity](documentation/BUILD_IDENTITY.md).
 
-Run `python tools/prepare_pages.py` to produce a new hosted artifact. Each invocation reserves a new main-scoped ordinal in `build/ledger.json`, prints its full ID, writes a versioned `.builds/<ID>/` distribution, then copies that identical payload to `docs/`. Do not rebuild simply to change the source SHA after committing generated output. Deploying or retesting the same payload keeps its identity.
+JS, CSS, Three.js modules, and images use relative URLs under `/TheUrbanGame/`. The existing `.nojekyll` marker and original portable game at `Urban-Game.html` remain available. `originals/` and the initial repository README are unchanged.
 
-Use GitHub Pages **Deploy from a branch**, with `main` and `/docs`. No custom Actions workflow or remote build is needed. GitHub may run its managed Pages deployment internally; a quota failure must be reported rather than changing billing settings or deleting artifacts.
+Do not run `tools/prepare_pages.py` for this 3D promotion: that historical entrypoint builds the 2D version. Do not rebuild Build019 to refresh metadata. Future promotion must verify the selected immutable archive, retain its identity, and update the deployment record and current documentation.
 
-To preview the project path locally, serve the repository's parent directory with `python -m http.server` and open `/TheUrbanGame/docs/`. The browser game saves to the current origin's local storage. To move an existing village from another host or the portable file, use **Download save** on that copy and **Open save** on the new host.
+## Saves And Verification
 
-The separate editable project ZIP was not among the supplied local files. This deployment reuses the complete portable game and does not reconstruct or claim to recover that missing package.
+The 3D game uses `nch-urban-game-3d-full-review-v3`; it does not read or write the accepted 2D key `nch-urban-game-v1`. Localhost and HTTPS Pages have separate storage. Transferring a village is an explicit owner action using **Download Review Save** and **Open Review Save**. Deployment and tests do not transfer, clear, or inspect owner saves.
+
+Use an isolated browser context to check the repository base path, all payload hashes, the rendered scene, Guide identity, camera controls, blank setup, and normal Round 1 advancement. Historical full-game evidence remains in [Build019 Validation](prototype-3d/VALIDATION.md).
+
+## Rollback
+
+The previous **1.0.0 River & Hearth Build002** and its complete source are preserved on `rollback/pages-1.0.0-before-build019` at `5059061dea9c106de5f70d25a6e238629ac76217`. Its current-build report is preserved as [Previous Pages Build](build/previous-pages.json). The original portable HTML retains SHA-256 `708817d6ae8951fe0504bc2636ff87d2ca5bd47d164659bb41c8b1dbfae8dc25`.
+
+For a later authorized rollback, prepare a normal PR restoring the exact `docs/` tree and `build/current.json` from that reference, update current hosting documentation, and pass normal deployment checks. Keep the 3D source and archives. Do not reset or force-push `main`, or rebuild the old artifact. Verify the managed Pages workflow and live manifest after merging.

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "artifact_reused": true,
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
+  "payload_files": 50,
+  "archive_sha256": "4da0424da7234da53cbf3cd1c057d134541ded6d91e33102eb48a0b2a6a8cd3c",
+  "source_revision": "b78f020777fa12a9b66334444cd781897c204cff",
+  "source_checkpoint": "e371296120a6ef49475758083a28fa22e9526bfc",
+  "source_fingerprint_sha256": "9399ffc60f30988e9d7d35b0618fe126f9d29ad7dbc68a244257710108df20a0",
+  "rollback_ref": "rollback/pages-1.0.0-before-build019",
+  "rollback_commit": "5059061dea9c106de5f70d25a6e238629ac76217",
+  "rule_model_source_save_tests_passed": 43,
+  "originals_root_readme_portable_unchanged": true
+}

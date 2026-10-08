@@ -1,5 +1,11 @@
 # Urban Game Review Instructions
 
+## Current Pages Authorization
+
+The owner authorized publishing the exact Build019 artifact to GitHub Pages on October 8, 2026. This supersedes the earlier review-only restrictions on `docs/`, merging, and deployment below for this promotion. Preserve `originals/`, the initial root README, all archived artifacts, build identities, and owner saves. The old Pages source and payload are preserved on `rollback/pages-1.0.0-before-build019` at `5059061dea9c106de5f70d25a6e238629ac76217`. See [Hosting](HOSTING.md) and [Build Identity](documentation/BUILD_IDENTITY.md). No unrelated behavior changes are authorized.
+
+## Preserved Review Instructions
+
 - Preserve `originals/`, `docs/`, and the initial root `README.md` exactly. The accepted Pages baseline is commit `5059061dea9c106de5f70d25a6e238629ac76217`.
 - Active wording-fix work is `review/3d-round9-wording` in this checkout. The `review/3d-full-game` checkout remains the preserved Build018 baseline. Do not deploy or merge the prototype into accepted Pages without the owner's later review and authorization.
 - The owner's later overnight instruction extends **1.1.0 A Town Takes Shape** through all original Rounds 1-20 and closing reflections. First deepen Build011 regression testing, then finish and verify the original rounds, then improve selected 3D models using the permanent original illustrations. Do not invent an economy or score, add historical events, or silently correct classroom wording.

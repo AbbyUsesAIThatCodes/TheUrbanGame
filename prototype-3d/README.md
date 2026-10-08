@@ -1,6 +1,6 @@
 # The Urban Game — Local 3D Review
 
-The owner-authorized **1.1.0 A Town Takes Shape** review covers the original setup, all 20 rounds, the urbanization conclusion, and both original reflection question sets. Public Pages remains the accepted 1.0.0 release; this is a review branch; the prototype is not deployed.
+The owner-authorized **1.1.0 A Town Takes Shape** review covers the original setup, all 20 rounds, the urbanization conclusion, and both original reflection question sets. On October 8, 2026, the owner authorized promoting this exact Build019 to [GitHub Pages](https://abbyusesaithatcodes.github.io/TheUrbanGame/). See [Hosting](../HOSTING.md) for current deployment, save separation, and preserved 1.0.0 rollback. The local review instructions below retain their original host context.
 
 ## Open The Review
 
@@ -32,7 +32,7 @@ The version 3 review wrapper imports version 1 Round 1 and version 2 Round 5 rev
 
 The current browser key is `nch-urban-game-3d-full-review-v3`. If absent, the app copies a valid save first from `nch-urban-game-3d-round5-review-v2`, then from `nch-urban-game-3d-round1-review-v1`. Both earlier values remain untouched. The accepted 2D key `nch-urban-game-v1` is never read or written.
 
-Builds 006, 008, 011 and the complete-game Build015 remain in immutable distributions, local baseline branches, and sibling QA folders. The wording correction continues on `review/3d-round9-wording`; `review/3d-full-game` preserves Build018. The owner authorized review-branch uploads for preservation. The earlier source and immutable Builds015/017/018 are preserved; Build019 adds the approved wording correction; see [Review Downloads](../review-builds/README.md). Merging into main and deploying the prototype remain outside this task.
+Builds 006, 008, 011 and the complete-game Build015 remain in immutable distributions, local baseline branches, and sibling QA folders. The wording correction continues on `review/3d-round9-wording`; `review/3d-full-game` preserves Build018. The owner authorized review-branch uploads for preservation. The earlier source and immutable Builds015/017/018 are preserved; Build019 adds the approved wording correction; see [Review Downloads](../review-builds/README.md). The original review did not authorize deployment; the October 8 authorization and current hosting are documented above.
 
 ## Validation
 

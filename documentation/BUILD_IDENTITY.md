@@ -1,5 +1,24 @@
 # Build Identity
 
+## Current Pages Deployment
+
+The October 8, 2026 owner-authorized promotion reuses **1.1.0 A Town Takes Shape Build019** unchanged. Its canonical ID remains `1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review`, UTC time `2026-10-05T23:15:42.626832+00:00`, and clean source `b78f020777fa12a9b66334444cd781897c204cff`. The later source/archive checkpoint `e371296120a6ef49475758083a28fa22e9526bfc` and the deployment commit are separate provenance records, not replacement build identities.
+
+No ordinal is allocated, PR number retrofitted, or `local-prototype`/review metadata rewritten for deployment. `build/current.json` records public hosting separately. `build/release.json`, `build/ledger.json`, and `tools/prepare_pages.py` remain the legacy 2D pipeline. The subsequent sections retain historical build and review context; [Hosting](../HOSTING.md) is authoritative for current publishing and rollback.
+
+| Current Surface | Location |
+| --- | --- |
+| Deployment report and archive hash | `build/current.json` |
+| Exact hosted payload and hashes | `docs/`, `docs/payload-checksums.json` |
+| Manifest and embedded identity | `docs/build-manifest.json`, `docs/index.html` |
+| Compact label and full Guide identity | `#buildIdentity`, `#buildDetails` |
+| Artifact release authority | `prototype-3d/release.json` |
+| Preserved source, archive, and evidence | `prototype-3d/`, `review-builds/`, `documentation/validation/build-019/` |
+| Prior deployed report | `build/previous-pages.json` |
+| Prior source/payload rollback | `rollback/pages-1.0.0-before-build019` at `5059061dea9c106de5f70d25a6e238629ac76217` |
+| Deployment workflow | GitHub-managed Pages, `main:/docs`, no compilation |
+
+
 ## Release And Compatibility
 
 The inherited release is **1.0.0 — River & Hearth**, matching the original Guide. This hosting adaptation keeps that release and its version-1 JSON saves. It adds no game mechanics and does not change save fields or the `nch-urban-game-v1` storage key. The codename remains stable for this recovered release. Future agreed game changes use major.minor.patch according to save and gameplay compatibility.

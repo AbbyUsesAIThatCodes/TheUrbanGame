@@ -1,0 +1,19 @@
+{
+  "url": "http://127.0.0.1:8772/TheUrbanGame/",
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
+  "checks": [
+    "All 50 HTTP payloads and repository-base URLs match the immutable Build019 archive",
+    "Prepared Round 1 and visible 3D canvas load",
+    "Guide opens and shows exact build/source identity",
+    "Camera orbit, pan, overhead, zoom, and framing leave village data unchanged",
+    "Blank setup opens through normal controls in isolated test storage",
+    "Normal Round 1 placements, gate, advancement to Round 2, and reload persistence pass",
+    "Accepted 2D storage sentinel remains unchanged",
+    "No script errors, failed assets, or HTTP error responses"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "responses": [],
+  "browser": "Installed Chrome; new isolated context; no owner profile",
+  "status": "passed"
+}

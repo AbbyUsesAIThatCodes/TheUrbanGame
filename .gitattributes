@@ -1,5 +1,6 @@
 # Preserve the recovered source files without newline normalization.
 originals/** -text
-docs/*.html -text
+# Deploy archived payloads byte-for-byte, including JS/CSS/JSON newlines.
+docs/** -text
 # Keep review source fingerprints stable across Windows checkouts.
 prototype-3d/** -text

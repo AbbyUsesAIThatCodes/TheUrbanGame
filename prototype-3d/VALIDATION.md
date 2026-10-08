@@ -1,5 +1,7 @@
 # Review Validation
 
+This records the original Build019 review validation. The October 8, 2026 owner-authorized Pages promotion reuses the exact artifact without rebuilding. See [Hosting](../HOSTING.md) and [Current Build](../build/current.json) for current deployment and rollback. Host URLs and main/Pages state in the historical handoff section below describe the original review, not the later publication.
+
 Current wording-fix artifact: **1.1.0 A Town Takes Shape Build019**.
 
 Canonical identity: `1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review`.
