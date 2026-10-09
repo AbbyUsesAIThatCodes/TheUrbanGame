@@ -1,0 +1,101 @@
+{
+  "scope": "local-3d-review",
+  "next_ordinal": 20,
+  "attempts": [
+    {
+      "ordinal": 1,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-001_20261004T222721Z_ged367a7a6138_dirty-763c83f13068_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 2,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-002_20261004T222741Z_ged367a7a6138_dirty-319250916de8_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 3,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-003_20261004T223105Z_ged367a7a6138_dirty-74c037423de2_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 4,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-004_20261004T223146Z_ged367a7a6138_dirty-4c970e426eca_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 5,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-005_20261004T223428Z_ged367a7a6138_dirty-cec89fda9c8a_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 6,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-006_20261004T223540Z_ged367a7a6138_dirty-664562612c38_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 7,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-007_20261004T235114Z_g5965d80a4687_dirty-1453707c14a4_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 8,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-008_20261004T235623Z_g5965d80a4687_dirty-811f5b412d7d_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 9,
+      "identifier": "1.0.0_River-and-Hearth_local-3d-round-1_build-009_20261005T001128Z_g698cddb5b049_dirty-aed622187538_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 10,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-010_20261005T002729Z_g698cddb5b049_dirty-746e8f1c1b65_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 11,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-011_20261005T003126Z_g698cddb5b049_dirty-5c7f7532b83e_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 12,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-012_20261005T015139Z_g3b5e7e193822_dirty-ebc4f240cc16_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 13,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-013_20261005T015409Z_g8f919aa33711_dirty-39be003c3139_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 14,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-014_20261005T015748Z_g70c9bf0269b4_dirty-bf794a75047f_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 15,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-015_20261005T020100Z_g70c9bf0269b4_dirty-b3056408f982_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 16,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-016_20261005T021053Z_g9f236629e674_dirty-da489de93d9b_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 17,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-017_20261005T021504Z_g9f236629e674_dirty-fe4b6b859f57_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 18,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review",
+      "status": "succeeded"
+    },
+    {
+      "ordinal": 19,
+      "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
+      "status": "succeeded"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+// Transcribed from the original full deck, not generated from the rule engine.
+module.exports=[null,
+ {slide:9,year:'1745',add:{manor:1}},
+ {slide:10,year:'1750',add:{house:5}},
+ {slide:11,year:'1760',add:{house:5,manor:1}},
+ {slide:12,year:'1773',add:{factory:1,house:5}},
+ {slide:13,year:'1774',add:{house:15,church:1,pub:1,store:1}},
+ {slide:14,year:'After 1774',add:{factory:5,house:15}},
+ {slide:15,year:'1780',add:{tenement:5},images:16},
+ {slide:17,shortSlide:16,year:'1781',add:{store:1,pub:1,school:1,church:1}},
+ {slide:18,shortSlide:17,year:'1782',add:{pub:5,jail:1,tenement:4},demolish:5},
+ {slide:19,shortSlide:18,year:'1783',add:{manor:2,factory:1,house:15}},
+ {slide:20,year:'1785',add:{factory:10,manor:1,house:5,tenement:1}},
+ {slide:21,year:'1800',add:{mine:1,house:5}},
+ {slide:22,year:'1815',add:{mine:1,cemetery:1},images:23},
+ {slide:24,year:'1820',add:{house:5}},
+ {slide:25,year:'1827',add:{jail:2,pub:4,tenement:2},images:26},
+ {slide:27,year:'1838',add:{hospital:2,cemetery:1},images:28},
+ {slide:29,year:'1840',add:{house:5,tenement:1}},
+ {slide:30,year:'1842',add:{theater:1,museum:1,school:2,manor:1}},
+ {slide:31,year:'1845',add:{cemetery:1,jail:1,hospital:1},images:32},
+ {slide:33,year:'1850',add:{house:20,tenement:5,store:2,church:1,factory:5,pub:1,manor:3}}
+];

@@ -1,0 +1,20 @@
+{
+  "name": "urban-game-round-one-review",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "python build.py",
+    "serve": "python -m http.server 8770 --bind 127.0.0.1 --directory dist",
+    "test": "node tests/rules.test.cjs && node tests/full-rounds.test.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "test:full-browser": "node tests/full-browser.cjs",
+    "test:camera": "node tests/camera.cjs"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

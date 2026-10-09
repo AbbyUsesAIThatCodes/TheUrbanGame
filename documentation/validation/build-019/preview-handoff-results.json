@@ -1,0 +1,13 @@
+{
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
+  "from": "http://127.0.0.1:8770/",
+  "to": "http://127.0.0.1:8770/review-build-019/",
+  "checks": [
+    "Same-tab navigation from Build018 to Build019 automatically retains the exact Round9 test save",
+    "All50 payloads and relative asset paths at the final review URL match Build019",
+    "Original Build018 URL remains unchanged and can still read the same unmodified save"
+  ],
+  "errors": [],
+  "previousIdentity": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review",
+  "status": "passed"
+}

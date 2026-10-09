@@ -1,2 +1,8 @@
 /.builds/
 /build/.identity.lock
+/prototype-3d/node_modules/
+/prototype-3d/dist/
+/prototype-3d/.builds/
+/prototype-3d/.build.lock
+/prototype-3d/test-output/
+/prototype-3d/__pycache__/

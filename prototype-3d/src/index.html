@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#183d37"><title>The Urban Game · 3D Rounds 1–20 Review</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <main id="town" aria-label="3D village"><div id="loading">Opening Your Village…</div></main>
+  <header class="topbar">
+    <div class="brand"><span class="seal">U</span><div class="brand-copy"><h1>The Urban Game</h1><p id="buildIdentity">Local Development Session</p></div></div>
+    <div class="session-panel"><div class="era"><span id="era">1745</span><strong id="phase">Round 1 · The Canal Arrives</strong></div><nav aria-label="Review Actions"><button id="saveButton">Save &amp; Open</button><button id="guideButton" aria-label="Open controls and source notes">Guide</button></nav></div>
+  </header>
+  <section class="panel journal" id="journalPanel"><button class="panel-title" id="journalToggle" aria-expanded="true"><span>Village Chronicle</span><span class="collapse-mark">−</span></button><div class="panel-content"><label class="small" for="villageName">Your Village</label><input id="villageName" maxlength="60" aria-label="Village name"><div class="tabs"><button id="taskTab" aria-pressed="true">Your Task</button><button id="sourceTab" aria-pressed="false">Original Words</button></div><div id="taskPanel"><p id="roundHint"></p><div id="checklist"></div><button id="starterButton" class="quiet" hidden>Lay Out Starter Geography</button><p class="source-note" id="sourceReference"></p></div><div id="sourcePanel" hidden><label class="small">Source Deck <select id="sourceDeck"><option value="0">Full World History Deck</option><option value="1">Original Rounds 1–10 Deck</option></select></label><p id="sourceNotice" class="source-note"></p><div id="storyText"></div><div id="sourceImages"></div></div><div class="progress-line"><span id="progressText"></span><span id="progressNumbers"></span></div><progress id="progress" max="1" value="0"></progress><button id="nextButton" class="primary wide">Complete Round 1 <span>→</span></button><p class="review-note">Local review · Setup and Rounds 1–20</p></div></section>
+  <section class="panel tools" id="toolsPanel"><button class="panel-title" id="toolsToggle" aria-expanded="true"><span>Build Your Village</span><span class="collapse-mark">−</span></button><div class="panel-content"><p class="small tool-help">Choose a tile, then click the ground. Drag to draw waterways and roads.</p><div id="palette"></div><div class="edit-tools"><button id="moveButton">Move</button><button id="eraseButton">Erase This Round</button></div><div class="inspector" id="inspector"><div class="inspector-title"><h2 id="inspectTitle">Coal Mine</h2><button id="focusBuilding" title="Move the camera closer">Focus</button></div><div class="original-art" id="inspectArt" role="img" aria-label="Original building artwork"></div><p id="inspectDescription"></p><p class="source-note">Preserved Original Artwork</p></div></div></section>
+  <div class="view-controls" role="toolbar" aria-label="View controls"><div class="mode-group"><button id="panMode" aria-pressed="true">Pan &amp; Inspect</button><button id="rotateMode" aria-pressed="false">Rotate</button></div><span class="divider"></span><button id="overheadButton">Overhead</button><button id="isometricButton" aria-pressed="true">3D View</button><button id="fitButton">Frame Village</button><span class="divider"></span><button id="zoomOut" aria-label="Zoom out">−</button><span id="zoomLabel">100%</span><button id="zoomIn" aria-label="Zoom in">+</button><span class="divider"></span><button id="undoButton" disabled>Undo</button><button id="redoButton" disabled>Redo</button></div>
+  <div class="board-key"><span class="north">N ↑</span><span>29 × 32 Original Grid</span><span id="pointerCell">Pan to Explore · Wheel to Zoom</span></div>
+  <div id="status" role="status" aria-live="polite">A prepared village is ready for Round 1. Build the canal and your nice house.</div>
+  <dialog id="modal"><div class="modal-heading"><h2 id="modalTitle"></h2><button id="closeModal" aria-label="Close dialog">×</button></div><div id="modalBody"></div></dialog><input id="saveFile" type="file" accept="application/json,.json" hidden>
+  <script src="recovered/rules.js"></script><script type="module" src="app.js"></script>
+</body>
+</html>

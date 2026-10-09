@@ -1,0 +1,20 @@
+{
+  "url": "http://127.0.0.1:8770/",
+  "checks": [
+    "Round 2: exact-cell house placement after three rotations; duplicate click, undo, and redo preserve data",
+    "Round 2: interrupted placement, repeated action, save/reopen, cancelled file input, and malformed save recover without losing the village",
+    "Round 3: exact-cell house placement after three rotations; duplicate click, undo, and redo preserve data",
+    "Round 3: interrupted placement, repeated action, save/reopen, cancelled file input, and malformed save recover without losing the village",
+    "Round 4: exact-cell house placement after three rotations; duplicate click, undo, and redo preserve data",
+    "Round 4: interrupted placement, repeated action, save/reopen, cancelled file input, and malformed save recover without losing the village",
+    "Round 5: exact-cell house placement after three rotations; duplicate click, undo, and redo preserve data",
+    "Round 5: interrupted placement, repeated action, save/reopen, cancelled file input, and malformed save recover without losing the village",
+    "Two-square manor and river-bank factory placement remains exact after rotation",
+    "Rotated road drag, Escape, grouped undo, and switching to bridge placement remain responsive",
+    "No script/network errors or changes to accepted 2D storage"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "buildIdentity": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-017_20261005T021504Z_g9f236629e674_dirty-fe4b6b859f57_3d-review",
+  "status": "passed"
+}

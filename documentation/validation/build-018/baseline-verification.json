@@ -1,0 +1,25 @@
+{
+  "preserved_reviews": [
+    {
+      "build": "006",
+      "payloads": 14,
+      "status": "unchanged"
+    },
+    {
+      "build": "008",
+      "payloads": 14,
+      "status": "unchanged"
+    },
+    {
+      "build": "011",
+      "payloads": 14,
+      "status": "unchanged"
+    },
+    {
+      "build": "015",
+      "payloads": 49,
+      "status": "unchanged"
+    }
+  ],
+  "camera_and_pointer_handlers": "byte-identical to accepted build 008 source"
+}

@@ -1,5 +1,24 @@
 # Build Identity
 
+## Current Pages Deployment
+
+The October 8, 2026 owner-authorized promotion reuses **1.1.0 A Town Takes Shape Build019** unchanged. Its canonical ID remains `1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review`, UTC time `2026-10-05T23:15:42.626832+00:00`, and clean source `b78f020777fa12a9b66334444cd781897c204cff`. The later source/archive checkpoint `e371296120a6ef49475758083a28fa22e9526bfc` and the deployment commit are separate provenance records, not replacement build identities.
+
+No ordinal is allocated, PR number retrofitted, or `local-prototype`/review metadata rewritten for deployment. `build/current.json` records public hosting separately. `build/release.json`, `build/ledger.json`, and `tools/prepare_pages.py` remain the legacy 2D pipeline. The subsequent sections retain historical build and review context; [Hosting](../HOSTING.md) is authoritative for current publishing and rollback.
+
+| Current Surface | Location |
+| --- | --- |
+| Deployment report and archive hash | `build/current.json` |
+| Exact hosted payload and hashes | `docs/`, `docs/payload-checksums.json` |
+| Manifest and embedded identity | `docs/build-manifest.json`, `docs/index.html` |
+| Compact label and full Guide identity | `#buildIdentity`, `#buildDetails` |
+| Artifact release authority | `prototype-3d/release.json` |
+| Preserved source, archive, and evidence | `prototype-3d/`, `review-builds/`, `documentation/validation/build-019/` |
+| Prior deployed report | `build/previous-pages.json` |
+| Prior source/payload rollback | `rollback/pages-1.0.0-before-build019` at `5059061dea9c106de5f70d25a6e238629ac76217` |
+| Deployment workflow | GitHub-managed Pages, `main:/docs`, no compilation |
+
+
 ## Release And Compatibility
 
 The inherited release is **1.0.0 — River & Hearth**, matching the original Guide. This hosting adaptation keeps that release and its version-1 JSON saves. It adds no game mechanics and does not change save fields or the `nch-urban-game-v1` storage key. The codename remains stable for this recovered release. Future agreed game changes use major.minor.patch according to save and gameplay compatibility.
@@ -30,3 +49,39 @@ The canonical ID is `<version>_<codename-slug>_main_build-<ordinal>_<UTC>_g<revi
 | CI / IDE build entry points | None introduced | GitHub Pages deploys prebuilt static files |
 
 Two sequential real builds were checked for different ordinals and IDs. Reusing the second payload preserves its ID. The lock's rejection path is checked without reserving an artifact. Hosted manifests, console IDs, output directory, footer, and current report are compared end to end. Future PR-producing builds must allocate a new PR-scoped identity; do not relabel existing artifacts.
+
+## Separate 3D Review
+
+The accepted deployed 1.0.0 River & Hearth build above remains unchanged. The owner-approved review milestone is **1.1.0 A Town Takes Shape**, status `local-prototype`, target `3d-review`, playable setup through Round 20 with original closing reflections. It is not a published release. The authoritative release record is `prototype-3d/release.json`; package metadata mirrors its version.
+
+The existing durable ledger continues without resetting ordinals. From the 1.1.0 milestone onward, its stable scope is `local-3d-review`; earlier `local-3d-round-1` artifacts and their identifiers remain unchanged. No PR number is invented. The latest identity is authoritative in `prototype-3d/current-build.json`; a later local check-in may record the same tested dirty-input artifact without rebuilding it.
+
+The owner explicitly replaced the persistent full identifier with the compact **version codename BuildNNN** header format. This later instruction supersedes the earlier display convention for this local review. The generated manifest's `display_label` drives the header. The complete canonical identifier, fixed UTC timestamp, full source revision, and dirty-input fingerprint remain available in the manifest; Guide's About This Build shows the full identifier, UTC time, and revision.
+
+| Review Surface | Location |
+| --- | --- |
+| Release authority | `prototype-3d/release.json`; package version mirrors it |
+| Build entry point and full console ID | `prototype-3d/build.py`; `npm run build` |
+| Durable ordinal allocator | `prototype-3d/build-ledger.json`; exclusive `.build.lock` |
+| Versioned distribution | `prototype-3d/.builds/<full-ID>/` |
+| Stable local preview | `prototype-3d/dist/`; `npm run serve` |
+| Full manifest | `dist/build-manifest.json` and embedded `#review-build-manifest` |
+| Compact visible label | `dist/index.html`, `#buildIdentity` in the upper-left title banner |
+| Full identity in UI | Guide → About This Build, `#buildDetails` |
+| Current report and payload hashes | `prototype-3d/current-build.json` |
+| Test evidence | `prototype-3d/VALIDATION.md`; tracked `documentation/validation/build-017/`, `build-018/` and `build-019/` reports |
+| Earlier accepted reviews | Builds 006, 008 and 011 immutable distributions, local baseline branches, and sibling QA evidence folders |
+| Contributor instructions | `AGENTS.md`, `prototype-3d/README.md` |
+| Remote source backup | `review/3d-full-game`; preserved Build015 and Build017 checkpoint branches |
+| Downloadable review builds | `review-builds/`; original ZIP identities and SHA-256 in `checksums.json` |
+| CI / PR / remote deployment | Review branches uploaded with owner authorization; no PR, merge or prototype deployment |
+
+The core original game state stays at save version 1. The current review wrapper uses version 3, imports earlier version-1 and version-2 review saves, and stores them under a separate browser key without changing either earlier value. The wrapper records its review limit so completed earlier milestones can continue normally. Earlier artifacts and their earlier saves remain available.
+
+The build never writes to the repository's accepted `docs/` payload. It reserves an ordinal before output; failed attempts retain their reservation. Retesting and reopening an artifact preserve its identity. Full metadata and source fingerprints remain fixed at build time rather than being generated on page load. The focused consistency check compares the compact label to the authoritative fields and validates the full manifest, all payload hashes, source fingerprint, immutable distribution, and allocator lock.
+
+## Current Wording Review Checkout
+
+The owner-approved Round9 wording fix is on `review/3d-round9-wording` in `TheUrbanGame-round9-wording`. It continues the existing 1.1.0 A Town Takes Shape milestone and durable local-review ledger with Build019. Only this current checkout allocates new builds; the Build018 checkout and ledger are historical, not a second concurrent allocator. The latest canonical identity is in this branch's `prototype-3d/current-build.json`.
+
+The Build019 artifact is also copied to the old preview server's `dist/review-build-019/`, without replacing any Build018 payload. Its URL is `http://127.0.0.1:8770/review-build-019/`; the original root still serves Build018. This path shares the owner's existing storage origin. Build019's isolated test server uses port8771. All copies retain the same manifest and hashes.

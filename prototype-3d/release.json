@@ -1,0 +1,8 @@
+{
+  "version": "1.1.0",
+  "codename": "A Town Takes Shape",
+  "codename_slug": "A-Town-Takes-Shape",
+  "release_status": "local-prototype",
+  "last_round": 20,
+  "compatibility": "Version-3 review saves import the earlier Round 1 and Round 5 wrappers without auto-advancing or changing their core state. Earlier storage keys remain untouched."
+}

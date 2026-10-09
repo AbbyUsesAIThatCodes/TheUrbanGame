@@ -1,0 +1,11 @@
+{
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review",
+  "checks": [
+    "Round9 demolition rejects nice houses, supports undo/redo, and stops at exactly five ordinary houses",
+    "Round12 iron replacement supports undo/redo and repeated clicks preserve the crossing",
+    "Round14 rail dragging crosses water, groups undo, recovers from Escape/cancel, and blocks an incomplete network",
+    "Round17 west-to-east dragging completes its separate layer and survives download/reload/reopen"
+  ],
+  "errors": [],
+  "status": "passed"
+}

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
+  "payload_files": 50,
+  "distinct_real_builds": 19,
+  "allocator_collision": "rejected without mutation",
+  "reused_artifact": "same identity and bytes",
+  "source_fingerprint": "matches",
+  "accepted_pages_and_originals": "unchanged"
+}

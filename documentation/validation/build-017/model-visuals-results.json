@@ -1,0 +1,55 @@
+{
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-017_20261005T021504Z_g9f236629e674_dirty-fe4b6b859f57_3d-review",
+  "checks": [
+    "Four focused model views and rotations preserve source footprints and game state",
+    "Complete196-building village reopens and navigation preserves all data"
+  ],
+  "errors": [],
+  "scenes": [
+    {
+      "type": "house",
+      "round": 20,
+      "stats": {
+        "calls": 8,
+        "triangles": 7762,
+        "geometries": 11
+      }
+    },
+    {
+      "type": "manor",
+      "round": 20,
+      "stats": {
+        "calls": 8,
+        "triangles": 13302,
+        "geometries": 12
+      }
+    },
+    {
+      "type": "factory",
+      "round": 4,
+      "stats": {
+        "calls": 8,
+        "triangles": 28382,
+        "geometries": 13
+      }
+    },
+    {
+      "type": "factory",
+      "round": 20,
+      "stats": {
+        "calls": 11,
+        "triangles": 32322,
+        "geometries": 16
+      }
+    },
+    {
+      "type": "complete-city",
+      "stats": {
+        "calls": 2270,
+        "triangles": 1682786,
+        "geometries": 967
+      }
+    }
+  ],
+  "status": "passed"
+}

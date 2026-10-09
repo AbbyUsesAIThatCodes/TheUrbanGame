@@ -1,0 +1,34 @@
+{
+  "verified_remote_commit": "fe717b8dd16b7cb6218e440cd4e8cbf1664e372a",
+  "initial_source_preservation_commit": "62903917e492f31ce81214bd04367dd0ad4fefe1",
+  "main_commit_unchanged": "5059061dea9c106de5f70d25a6e238629ac76217",
+  "pages_source": {
+    "branch": "main",
+    "path": "/docs"
+  },
+  "repository_workflows": [],
+  "archives": [
+    {
+      "build": 15,
+      "path": "review-builds/1.1.0_A-Town-Takes-Shape_local-3d-review_build-015_20261005T020100Z_g70c9bf0269b4_dirty-b3056408f982_3d-review.zip",
+      "git_blob_sha1": "b52bc5b962ffbbfc8af921728edcfa1c5d4c8d38",
+      "archive_sha256": "ccf1cc74e07b51a0870dd484cb419ac7dec6bc1b380eaa266945d45525ce9404",
+      "bytes": 13687353
+    },
+    {
+      "build": 17,
+      "path": "review-builds/1.1.0_A-Town-Takes-Shape_local-3d-review_build-017_20261005T021504Z_g9f236629e674_dirty-fe4b6b859f57_3d-review.zip",
+      "git_blob_sha1": "41926529bc833d7e0e28d9d6eba06cfb2a831549",
+      "archive_sha256": "a6f83d34b3b8f27fdcdeaef56bc174f75c0ed37d5d4cae4fa76a707e9bdfdbf3",
+      "bytes": 13691837
+    },
+    {
+      "build": 18,
+      "path": "review-builds/1.1.0_A-Town-Takes-Shape_local-3d-review_build-018_20261005T093558Z_g62903917e492_3d-review.zip",
+      "git_blob_sha1": "b8dce9d80908e04798e6e8d2298ce1063f36f280",
+      "archive_sha256": "0b764afec8a453e512411139ebbdc16244921936a6528474dbb5805f68507d8f",
+      "bytes": 13691826
+    }
+  ],
+  "verification": "Remote Git tree blob IDs and sizes match local archives; each archive SHA-256 and every uncompressed payload checksum were verified."
+}

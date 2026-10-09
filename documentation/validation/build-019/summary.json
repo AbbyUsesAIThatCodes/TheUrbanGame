@@ -1,0 +1,29 @@
+{
+  "identifier": "1.1.0_A-Town-Takes-Shape_local-3d-review_build-019_20261005T231542Z_gb78f020777fa_3d-review",
+  "display_label": "1.1.0 A Town Takes Shape Build019",
+  "build_time_utc": "2026-10-05T23:15:42.626832+00:00",
+  "source_revision": "b78f020777fa12a9b66334444cd781897c204cff",
+  "source_dirty": false,
+  "source_fingerprint_sha256": "9399ffc60f30988e9d7d35b0618fe126f9d29ad7dbc68a244257710108df20a0",
+  "unit_tests": 43,
+  "browser_groups": {
+    "round9-wording-results.json": 7,
+    "late-actions-results.json": 4,
+    "full-browser-1-20.json": 23,
+    "preview-handoff-results.json": 3
+  },
+  "script_errors": 0,
+  "asset_failures": 0,
+  "navigation_cancellations": 0,
+  "payloads_verified": 50,
+  "review_url": "http://127.0.0.1:8770/review-build-019/",
+  "build018_url": "http://127.0.0.1:8770/",
+  "owner_browser_accessed": false,
+  "owner_save_accessed": false,
+  "rules_and_originals": "byte-identical",
+  "export_metadata_issue_1": "not changed",
+  "limits": [
+    "Headless Chromium/software WebGL",
+    "Physical touch, other browser engines and classroom hardware performance unverified"
+  ]
+}

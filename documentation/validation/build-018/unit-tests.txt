@@ -1,0 +1,282 @@
+
+> urban-game-round-one-review@1.1.0 test
+> node tests/rules.test.cjs && node tests/full-rounds.test.cjs
+
+TAP version 13
+# Subtest: Rules remain exactly the recovered original script
+ok 1 - Rules remain exactly the recovered original script
+  ---
+  duration_ms: 1.6474
+  type: 'test'
+  ...
+# Subtest: Prepared village completes original setup without a teacher override
+ok 2 - Prepared village completes original setup without a teacher override
+  ---
+  duration_ms: 9.0691
+  type: 'test'
+  ...
+# Subtest: Round 1 retains its source requirements and advances normally to Round 2
+ok 3 - Round 1 retains its source requirements and advances normally to Round 2
+  ---
+  duration_ms: 8.0586
+  type: 'test'
+  ...
+# Subtest: Footprints, protected commons, disconnected canals, and duplicate houses remain enforced
+ok 4 - Footprints, protected commons, disconnected canals, and duplicate houses remain enforced
+  ---
+  duration_ms: 1.2599
+  type: 'test'
+  ...
+# Subtest: Review imports enforce the current scope and valid completion flags
+ok 5 - Review imports enforce the current scope and valid completion flags
+  ---
+  duration_ms: 3.8784
+  type: 'test'
+  ...
+# Subtest: All 3D placeholders, including the water-powered factory, fit their original footprints
+ok 6 - All 3D placeholders, including the water-powered factory, fit their original footprints
+  ---
+  duration_ms: 239.2789
+  type: 'test'
+  ...
+# Subtest: Normal source progression completes Round 5 with 40 houses and continues without an override
+ok 7 - Normal source progression completes Round 5 with 40 houses and continues without an override
+  ---
+  duration_ms: 16.2338
+  type: 'test'
+  ...
+# Subtest: The commons open in Round 3 and its nice house must remain wholly inside later
+ok 8 - The commons open in Round 3 and its nice house must remain wholly inside later
+  ---
+  duration_ms: 1.8704
+  type: 'test'
+  ...
+# Subtest: Round 4 rejects canal-only or dry-land factories and accepts the river bank
+ok 9 - Round 4 rejects canal-only or dry-land factories and accepts the river bank
+  ---
+  duration_ms: 3.0977
+  type: 'test'
+  ...
+# Subtest: Round 5 roads and bridges are optional; a second crossing blocks completion until erased
+ok 10 - Round 5 roads and bridges are optional; a second crossing blocks completion until erased
+  ---
+  duration_ms: 3.8802
+  type: 'test'
+  ...
+# Subtest: Build 006 and 008 saves migrate losslessly, retain Round 1, and can continue
+ok 11 - Build 006 and 008 saves migrate losslessly, retain Round 1, and can continue
+  ---
+  duration_ms: 9.0704
+  type: 'test'
+  ...
+# Subtest: Earlier incomplete setup and Round 1 saves keep progress without being advanced
+ok 12 - Earlier incomplete setup and Round 1 saves keep progress without being advanced
+  ---
+  duration_ms: 3.337
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 322.7335
+TAP version 13
+# Subtest: Round 1: original slide, year, additions, requirements, normal advancement and save validation
+ok 1 - Round 1: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 1117.8993
+  type: 'test'
+  ...
+# Subtest: Round 2: original slide, year, additions, requirements, normal advancement and save validation
+ok 2 - Round 2: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 0.9646
+  type: 'test'
+  ...
+# Subtest: Round 3: original slide, year, additions, requirements, normal advancement and save validation
+ok 3 - Round 3: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 1.5404
+  type: 'test'
+  ...
+# Subtest: Round 4: original slide, year, additions, requirements, normal advancement and save validation
+ok 4 - Round 4: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 3.6901
+  type: 'test'
+  ...
+# Subtest: Round 5: original slide, year, additions, requirements, normal advancement and save validation
+ok 5 - Round 5: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 2.9865
+  type: 'test'
+  ...
+# Subtest: Round 6: original slide, year, additions, requirements, normal advancement and save validation
+ok 6 - Round 6: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 2.2521
+  type: 'test'
+  ...
+# Subtest: Round 7: original slide, year, additions, requirements, normal advancement and save validation
+ok 7 - Round 7: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 4.1121
+  type: 'test'
+  ...
+# Subtest: Round 8: original slide, year, additions, requirements, normal advancement and save validation
+ok 8 - Round 8: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 3.0574
+  type: 'test'
+  ...
+# Subtest: Round 9: original slide, year, additions, requirements, normal advancement and save validation
+ok 9 - Round 9: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 3.9768
+  type: 'test'
+  ...
+# Subtest: Round 10: original slide, year, additions, requirements, normal advancement and save validation
+ok 10 - Round 10: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 6.0654
+  type: 'test'
+  ...
+# Subtest: Round 11: original slide, year, additions, requirements, normal advancement and save validation
+ok 11 - Round 11: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 6.386
+  type: 'test'
+  ...
+# Subtest: Round 12: original slide, year, additions, requirements, normal advancement and save validation
+ok 12 - Round 12: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 6.1871
+  type: 'test'
+  ...
+# Subtest: Round 13: original slide, year, additions, requirements, normal advancement and save validation
+ok 13 - Round 13: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 6.6326
+  type: 'test'
+  ...
+# Subtest: Round 14: original slide, year, additions, requirements, normal advancement and save validation
+ok 14 - Round 14: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 7.5977
+  type: 'test'
+  ...
+# Subtest: Round 15: original slide, year, additions, requirements, normal advancement and save validation
+ok 15 - Round 15: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 11.8826
+  type: 'test'
+  ...
+# Subtest: Round 16: original slide, year, additions, requirements, normal advancement and save validation
+ok 16 - Round 16: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 12.6101
+  type: 'test'
+  ...
+# Subtest: Round 17: original slide, year, additions, requirements, normal advancement and save validation
+ok 17 - Round 17: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 10.6761
+  type: 'test'
+  ...
+# Subtest: Round 18: original slide, year, additions, requirements, normal advancement and save validation
+ok 18 - Round 18: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 10.6847
+  type: 'test'
+  ...
+# Subtest: Round 19: original slide, year, additions, requirements, normal advancement and save validation
+ok 19 - Round 19: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 12.6274
+  type: 'test'
+  ...
+# Subtest: Round 20: original slide, year, additions, requirements, normal advancement and save validation
+ok 20 - Round 20: original slide, year, additions, requirements, normal advancement and save validation
+  ---
+  duration_ms: 13.0761
+  type: 'test'
+  ...
+# Subtest: Every narrative resolves to its exact original slide, including the short-deck shift
+ok 21 - Every narrative resolves to its exact original slide, including the short-deck shift
+  ---
+  duration_ms: 5.044
+  type: 'test'
+  ...
+# Subtest: All restored classroom images match their exact embedded original bytes
+ok 22 - All restored classroom images match their exact embedded original bytes
+  ---
+  duration_ms: 501.2196
+  type: 'test'
+  ...
+# Subtest: Earlier Build011 saves migrate without state loss or automatic advancement
+ok 23 - Earlier Build011 saves migrate without state loss or automatic advancement
+  ---
+  duration_ms: 13.369
+  type: 'test'
+  ...
+# Subtest: Round7 proximity, Round9 exact demolition, and Round10 river power remain enforced
+ok 24 - Round7 proximity, Round9 exact demolition, and Round10 river power remain enforced
+  ---
+  duration_ms: 1.0704
+  type: 'test'
+  ...
+# Subtest: All model footprints remain inside the original grid dimensions
+ok 25 - All model footprints remain inside the original grid dimensions
+  ---
+  duration_ms: 314.5514
+  type: 'test'
+  ...
+# Subtest: Full source simulation ends with exact final totals, five demolished houses and 21 snapshots
+ok 26 - Full source simulation ends with exact final totals, five demolished houses and 21 snapshots
+  ---
+  duration_ms: 0.2675
+  type: 'test'
+  ...
+# Subtest: Smoke remains an exact 4x4 area on every factory, including board edges
+ok 27 - Smoke remains an exact 4x4 area on every factory, including board edges
+  ---
+  duration_ms: 3.7238
+  type: 'test'
+  ...
+# Subtest: Iron replaces one connected crossing and railway connectivity cannot be skipped
+ok 28 - Iron replaces one connected crossing and railway connectivity cannot be skipped
+  ---
+  duration_ms: 5.1714
+  type: 'test'
+  ...
+# Subtest: Round20 finishes once, records its final snapshot, and preserves reflection answers on reopen
+ok 29 - Round20 finishes once, records its final snapshot, and preserves reflection answers on reopen
+  ---
+  duration_ms: 30.3839
+  type: 'test'
+  ...
+# Subtest: Both reflection question sets remain byte-for-byte original wording
+ok 30 - Both reflection question sets remain byte-for-byte original wording
+  ---
+  duration_ms: 123.5068
+  type: 'test'
+  ...
+# Subtest: The second railway must be connected from west to east and remains a separate layer
+ok 31 - The second railway must be connected from west to east and remains a separate layer
+  ---
+  duration_ms: 2.8874
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2285.2022
